@@ -1,0 +1,13 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Inter Tight';
+  font-weight: 500;
+  src: url('../fonts/inter-tight-v7-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter Tight';
+  font-weight: 600;
+  src: url('../fonts//inter-tight-v7-latin-600.woff2') format('woff2');
+}
