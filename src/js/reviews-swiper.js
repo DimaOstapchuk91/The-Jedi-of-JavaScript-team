@@ -1,5 +1,7 @@
 import { Swiper, Navigation, Pagination, axios } from './libs';
-console.log('Hello-world rewiews');
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 // TODO
 // 1. create layout for section and Swiper
 // 2. get refs for Elements
@@ -52,7 +54,7 @@ const swiperForReviews = new Swiper(refs.swiper, {
 
 async function getReviews() {
   const response = (
-    await axios.get('https://portfolio-js.b.goit.study/api/review')
+    await axios.get('https://portfolio-js.b.goit.study/api/reviews')
   ).data;
   return response;
 }
@@ -79,6 +81,11 @@ async function renderReviews() {
       'beforeend',
       '<li class="error-mock"><p>SORRY, NOTHING TO SHOW HERE</p></li>'
     );
-    alert('Error happend');
+    iziToast.info({
+      message: 'We`re sorry, but reviews list is currently unavailable',
+      position: 'bottomRight',
+      timeout: 2000,
+      icon: '',
+    });
   }
 }
