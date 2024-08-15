@@ -1,0 +1,46 @@
+.reviews-container.swiper {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews-list {
+  display: flex;
+  gap: 16px;
+}
+
+.reviews-list-item.swiper-slide {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 332px;
+  height: 302px;
+}
+
+.error-mock {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
+  padding: 15px;
+  height: 302px;
+  width: 100%;
+  align-content: center;
+}
+
+.reviws-avatar {
+  display: block;
+  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+.swiper-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+button.review-button-prev,
+button.review-button-next {
+  display: inline-block;
+  position: static;
+  height: 10px;
+}
