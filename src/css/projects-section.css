@@ -1,35 +1,31 @@
 .projects-section {
-    width: 343px;
-    height: 952px;
+    max-width: 100%;
+    height: 100%;
 }
 
 .title-projects-section {
-    width: 343px;
     margin-bottom: 32px;
 }
 
 .swiper-container {
+    margin-bottom: 64px;
+}
+
+.review-item {
     border-radius: 24px;
-    width: 343px;
-    height: 812px;
     background: #fafafa;
     display: flex;
     flex-direction: column;
 }
 
-.review-list {}
-
-.review-slide {}
-
-.text-slide {}
-
-.wrap-technology-stack {}
+.text-slide {
+    height: 100%;
+}
 
 .technology-stack-list {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    width: 279px;
     margin: 32px 32px 96px 32px;
 }
 
@@ -52,18 +48,13 @@
 }
 
 .programming-across-text {
-    font-family: "Inter Tight", sans-serif;
-    font-weight: 500;
     font-size: 24px;
     line-height: 1.17;
     letter-spacing: -0.03em;
     color: #1c1d20;
-    margin-top: 64px;
 }
 
 .project-link {
-    font-family: "Inter Tight", sans-serif;
-    font-weight: 500;
     font-size: 16px;
     letter-spacing: -0.02em;
     text-align: center;
@@ -93,8 +84,69 @@
     align-items: center;
 }
 
-.button-container {}
+.button-container {
+    width: 156px;
+    height: 68px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
 
-.swiper-button-prev {}
+.project-button {
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    border-radius: 60px;
+    padding: 18px;
+    width: 68px;
+    height: 68px;
+    background: #1C1D20;
+}
 
-.swiper-button-next {}
+.icon-arrow {
+    stroke-width: 2px;
+    stroke: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .swiper-container {
+        width: 704px;
+    }
+
+    .technology-stack-list {
+        margin-top: 64px;
+        margin-bottom: 124px;
+        margin-left: 64px;
+    }
+
+    .programming-across-borders {
+        margin-left: 64px;
+        width: 494px;
+    }
+
+    .programming-across-text {
+        font-size: 44px;
+    }
+
+    .project-link {
+        padding: 18px 50px;
+        width: 177px;
+        height: 55px;
+        margin: 64px 513px 64px 64px;
+    }
+
+    .image-slide {
+        width: 704px;
+    }
+
+    .content-image-slide {
+        width: 614px;
+        height: 385px;
+    }
+}
+
+@media screen and (min-width: 1440px) {}
