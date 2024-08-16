@@ -45,3 +45,20 @@
 .faq-text {
   color: #fafafa60;
 }
+
+.faq-panel {
+  display: flex;
+  position: absolute;
+  left: 0;
+  flex-direction: column;
+  margin-top: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: Spx;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height Is ease, opacity Is ease, visibility Is;
+  z-index: 1;
+}
