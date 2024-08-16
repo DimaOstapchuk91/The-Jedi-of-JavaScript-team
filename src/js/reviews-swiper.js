@@ -1,9 +1,5 @@
 import { Swiper, Navigation, axios, iziToast } from './libs';
 
-// TODO
-// swiper doesnt work
-// 7. add stiles mobile first
-
 const refs = {
   swiper: document.querySelector('.reviews-container'),
   swiperNext: document.querySelector('.review-button-next'),
