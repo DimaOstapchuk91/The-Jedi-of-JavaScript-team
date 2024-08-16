@@ -8,8 +8,16 @@ new Accordion(document.querySelector('.faq-accordion-container'), {
   triggerClass: 'faq-trigger',
   onOpen: function (currentElement) {
     console.log(currentElement);
+    const arrow = currentElement.querySelector('.faq-arrow');
+    if (arrow) {
+      arrow.style.transform = 'rotate(180deg)'; // Rotates the arrow 180 degrees
+    }
   },
   onClose: currentElement => {
     console.log(currentElement);
+    const arrow = currentElement.querySelector('.faq-arrow');
+    if (arrow) {
+      arrow.style.transform = 'rotate(0deg)'; // Resets the arrow rotation
+    }
   },
 });
