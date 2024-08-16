@@ -9,4 +9,7 @@ new Accordion(document.querySelector('.faq-accordion-container'), {
   onOpen: function (currentElement) {
     console.log(currentElement);
   },
+  onClose: currentElement => {
+    console.log(currentElement);
+  },
 });
