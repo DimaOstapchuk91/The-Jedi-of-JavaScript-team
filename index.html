@@ -19,11 +19,67 @@
     <script type="module" crossorigin src="/The-Jedi-of-JavaScript-team/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/The-Jedi-of-JavaScript-team/assets/vendor-BkmcpDQf.js">
     <link rel="stylesheet" crossorigin href="/The-Jedi-of-JavaScript-team/assets/vendor-ClcSq75w.css">
-    <link rel="stylesheet" crossorigin href="/The-Jedi-of-JavaScript-team/assets/index-DCoVo7Fq.css">
+    <link rel="stylesheet" crossorigin href="/The-Jedi-of-JavaScript-team/assets/index-BdgN3A5I.css">
   </head>
   <body>
     <!-- Header -->
-    <p>Header</p>
+    <header id="header" class="header">
+  <div class="header-box">
+    <div class="header-wrap container">
+      <div class="header-logo">
+        <a href="./index.html">
+          <img
+            class="header-logo-image"
+            srcset="data:image/webp;base64,UklGRvwDAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSLMAAAABcBXZdhRdCXHAczI4SRxESnCABCQg4Um4EiKBfb//ExETgNOWe9bp5dWHbLg5jdNnPd7Rcvo045XQTZ8v4ZT5JJB2wjhJpB0ETiI97HWTzLKTJqHthkoIIE1SI+BaRtgktslq8qCmdzWsaur093JVU6nGezVDVpNNjWHU4kDSEgFQCQGgVRI3KDoKdoOrYNiDUQMNx0YFbjgbyvdKwMXEb/GHG5N/Z4y42fLg9W2VfW5wGgBWUDggIgMAANAPAJ0BKlAAUAA+kUCbSqWjoiGlNAvIsBIJYwDOAqarqt+9pgGfFQL/AbiOq1nHMief7r0IfNpV0kL85st49x4KGnKEf42iXsrPQ/Ok4111LhzKBlv3MJElPq/cT1JPgXYJaI2RfmVZvdzL1zfD4r7478UtbIBe5ov9z742l+fdrTjJlu5tAAD++UGg/MTcf0QDkfplWEWzeitfNAmySBvKA9ixked0aVAk6ibtiprORJhsgnqBs7tJ1C3YlVp1O0ecPMEYbvVnXb3MEOeI9FN1xfzeebfJiZRzz2RMiCn57Di8+7S09gLzxNNLOwzmnR+7ViVeEQE1766DCHjBhl3eRbaTbYVypSMXBteXQ1poUW2DCMA/eRt1tXXF+beK1Qo60hThhk4D3OiWYi58GVmy4iksY31pW83w9q/TJCLeVlDreo9QuoQnLSq8zBOQ3qub35cNVlvgC870FzmzhNZZEGMi8GMlHDpp2abnpKXrrqMbWjvOiQ3QOuKoXerF1e0o6J4hWzn6B+q5+JgPaN3wN6BBmoZ6Ipig/2hPqVaSKIaPJCU3HDi6OhrZslZUQiyT3UD9prTGRXjqpOTJg3utm8yXTi2NkdAVsJsqymUrL4ueXUfjEg1CJW0lj4nXL31y2hrHOY1oA5ku9VV5iFsZmk4GoNoCaueZ9Qx24YsNZRdS1k1svz/YCC9NfygfC88kOHDxFB4OswdL/5fu3VhBeAZI3CmtEjXDbpXWU5x1UH1uBZVMUSnoYnMk2pDz9dzqkJitblKgiHHOKE0+XdrA5FEchLd7u/Szg4HXjwPhDmAB+SGjzGBx6pfybgbsfse3AIiaVsIFZzqdVuMzkY6msSmTSa+L60HxreyCOmWq5eqYPNXhJvwmnMHUHUW6KUhYKYd3rPO+W5NBekXrqAAsHAlMtdL7YQTpdx+f8ZTGbKOD7w2xvTpkRuBjZFmKJFatw+TDBZetnZimX4cyBKi2KO5Fl4UGXKCklDC0R0DfUzl8IzgOXRr45hQRKus4OkGXwXFCL/GnxkLCaSTbMZlQps1tcVHcnM2lcV9utvuAAAA= 1x, data:image/webp;base64,UklGRrIJAABXRUJQVlA4WAoAAAAQAAAAnwAAnwAAQUxQSGcBAAABkFZrb95ILwRBMIQyaBi0DFoGCgOHgYdJIQhCIQiCIGh2N98zfn9uI2ICcKRctL3c81f3tzUd8CNFLbKf9ignE7Xsrj1OJFNkl30q55Apsts+nWHw7LrfjpKv7H6TQ4ongV4OGCIpjPtuY9I47jQlkdMuY1I57nBPModNJdiIskE86XRZ95WEtlX3pHRY45y4LE1Jal0ozkrI3JS01jnnJeSfZxKr/xgzBqAktQI8uVHAuDEguQ0ZyMmLsqONnWbsvN7suNOTH/9//P/x///AOjtOz/vFjjV2mrKjF3auEuQAxo0Bys0DEG4KAGPGAECZefwjwYtjtvJS5yRY8TKHykrFojgnjpUDJ7c1aIw0rBbnw2UdSrARBVsHNu7YPnKh2LMyUbHvyINi73twEFfsX5wBLzhSWv+a4OCb982vOGH1fkUVnLJU71NUwXmf1h9TwbnL0zoSpoIfedVmb//d3F9NL4IjAQBWUDggJAgAALArAJ0BKqAAoAA+kUCcSiWjoqSns1qgsBIJZwDRtRxOaOz6W9wZzt7cOeHvmm+HqEfdu//MGh38olZX366hnSjLv9lM5c7c0G+wH+yeCMtZXC5kFYVWAwV6k3woB5l0olu6JGR4fcvU1gVAHTg3SYbhDsz3QJtVB/VXTqn1TZ4BlLyjT3GLusf6sLJxCQsW6/jiPqtE6MNI11QietkTFAldWDFCJOfG2KWx94dwCU9So99tsH7G7j5zy5lcjHU1LLDg17AwqCzWsFnfsDf68LZ7paxwZJe7JRey5x88HHfcaIp1ejCKgrdNxP178Wa8xhszmfmqjehpOcrl7ifxfwqa5At0rsI/ldpwp98t8ZCwex2bxnCY8S2OYOFMYzr3eKCFONoqDJttUe4Yh8n6rcf5brzWwSmuVkY2CckF8j7O7GYIPBoi3g5iTrnB7aDcg43AFkplCRjuqEahGKwyvGUnZxswGAAA/uxm//3d3/+7iP//dHqrZtGNQvwgBGao74nz9zye6p0BX3jiPqzrzTEFekjEjx28+dwN8dUSZHXLKDFvIJGX4eKPH1dtCuybdulLM0Kp4KTz3HhwZORrd0A9FIeZeOBtG/3ZuKMV1Rdk9ApDhfooL+VuuXhLpV5bWpVFzws7jEEJWic6rAlUoglkBQwQsX17k9Iaz8PAOPxiW+I4X8hKMcRvG2gKcjuNe1kcm20pyFFFYXhRrsAf+YzgIG7SHBurAId4GH6VgBCuQMFZRoToiO1USQJYjZu58JYABL/EewZm0d6iKC759hhp9fpCfM0dHBgrIUpZ/ZLL0rBonfg4IYiKhF8FoYoJU5O/CIMMRAMuQYmcHy52477f1tpMvWttL0AAV0JkKyeYhYZiRrPoxGCf8A0Lt9ftpuAeBi+kWdasSrZYBgB9DMl3wGWtDrGROWY0XJpJkirkjhq7WVOGSKoXf8n1t8Fk9yPKfV9e0obJjWmAZ2Te5VdT8BbPSCiE06lSK3DS36wMUJhli/GYUHcfZARGQCgqb741/+FcOfy7QcMoHJfmfXjDf3wlPxHhR9h3LwRCzsds4LAR8XuNUPDOWl5yZlJh5hgHrMBqSCm+NmKdSqQ2X7rMTWM+ZYYbFAncpoKsgFYnBQPW8lj21Pn+0/c4lFiK3u++ai0p4LTA30WwvHeTX+8L3x/HcVjScdnMLVkFutK8U7hCtsV6nPt6FxtZUpPottRYu1pYkb+nFv48GzkMbnD/zxEVtnP/KrSHSOrhZC/301nvS0BnjahFBDVbFIZ3C5OxdP/KtjrQxp+KlCKqlkqZiIY1XzmdT2mVEaajyHobvTTc/KoxvxXSzyQa2OWor5huAbBylgMjxR8rMMXJu1RF5Ia3swM51ZYt/m6LZPoHlAxR8twnBGoMjhL09Vhrgv2LJ0LoPxI1IjjPDWZGxK5K03u69L6xoyxdpvVDCxZlXMJaj/K10cVeZDAiKARsNL8/QnG2yth+bBlP+FC1spPTznl32DPB0em3HwlgVxJ4yThJ3+jq0HWG7vQYlN8mi8SC44IONqEDXUgcMDSV2eyDEwLRiyTzL0JllDJItFprtKydKNYuMQCX0X9nv8cAaSvW7hQz/aGsUDJSZCD+KoqRKxTWhEkn0QWMIOrGH7S0OCtLtmL1uss1tiCbwmMlzKXpaLEAgz+mpW8FJ8XqX/zBTniS/GxO+RoH5jj1Bq6B8hxfGD/sGsVF1Jnm1cx3kY0OAYIlCX0+034FCEfyPwNJCUGB6oBo+O3GMTyVZ/YtjdVhvB+MkEEews0YLIt5LWrxya+7D9dz1r5pCW5gZV2D06Y09HHYbLfnz8hTVYyIFG4OCXSaulWWQfnbv/siiVfpXH8/iaKR4J5v0vpoUVutFxVqA43dPgEuKjyw+idYg4PPhchHsaXS+IctRpz5FA2abv/z+NFYW0tfKbl3nzhe9geIJB70Q8vbG3vtY62pUk7MxVC1tyg5Z38n1GXofoXoh5lDOjeAPed+NsX4d1j8lHuLtgXN+l0ov6ptrnfEaL+ryZGihceFyD+1udc6HU7cvHIuKyCPkWMQ8HOl5EqNi0v/f7qLEfPP4d17M78UB9FutdDfptgJylEGatcpBfNdEIogFM2haas/oKhR8fJSB6KsSbnWxzO8FHrVI/CYY746bf6oSDIMo+/cXBslfdb/1UbEJlLMUpSytR+brw5la/ypUKHUbTM9WbPo090+f+BN8MM40AeiKefpvmrv3gE8CVnYeQDSCmHLVHZ4KGIm9WPjjkWakmobaf8FVlY5DpOn004t5/tpRMZ/Z94znzNUrWGrz1G+idYCHtRKI0zPjwPav5VkHWcHvyxV/MAaP2ChOO83tUOpDCKRWBNEVBMG3XfZf3xjhcxrW1ZqgFdlpLD75ytUmxfK6MIqSEDSKQGulLGv2nooIIPk040YqPWkubJhdew+3mzb3sBlPUM0kf7396hmuM+fLr0Mx1Z8bSgXxx+WsXx9tLweqXz+DzKB9nTVpYYbcU8Bgn70PC3VQFsho/xKJu/D7u9Euwy9kq9BduLLRivRlSfYhXpG5bpuKqoDdIL93E9pHy+71Eghd99zEN/tdQa/fRd6piWMsHo+TAeNi28w3j+y6p9xypc7IWftiRNFWwmFYo+nHrRoYrlQtjWlNQcVW828rpWY+m8V4ayQ9QbElULMDUQ8IWo1tzE61MCoCW8PohiG9E+WAbp8rxBkLhZBKsMhbUwNEszhXJJdEApkA3XtpINAyR8TYwQyWP6tG7GpHeiG4Cu/YzAA 2x"
+            src="data:image/webp;base64,UklGRvwDAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSLMAAAABcBXZdhRdCXHAczI4SRxESnCABCQg4Um4EiKBfb//ExETgNOWe9bp5dWHbLg5jdNnPd7Rcvo045XQTZ8v4ZT5JJB2wjhJpB0ETiI97HWTzLKTJqHthkoIIE1SI+BaRtgktslq8qCmdzWsaur093JVU6nGezVDVpNNjWHU4kDSEgFQCQGgVRI3KDoKdoOrYNiDUQMNx0YFbjgbyvdKwMXEb/GHG5N/Z4y42fLg9W2VfW5wGgBWUDggIgMAANAPAJ0BKlAAUAA+kUCbSqWjoiGlNAvIsBIJYwDOAqarqt+9pgGfFQL/AbiOq1nHMief7r0IfNpV0kL85st49x4KGnKEf42iXsrPQ/Ok4111LhzKBlv3MJElPq/cT1JPgXYJaI2RfmVZvdzL1zfD4r7478UtbIBe5ov9z742l+fdrTjJlu5tAAD++UGg/MTcf0QDkfplWEWzeitfNAmySBvKA9ixked0aVAk6ibtiprORJhsgnqBs7tJ1C3YlVp1O0ecPMEYbvVnXb3MEOeI9FN1xfzeebfJiZRzz2RMiCn57Di8+7S09gLzxNNLOwzmnR+7ViVeEQE1766DCHjBhl3eRbaTbYVypSMXBteXQ1poUW2DCMA/eRt1tXXF+beK1Qo60hThhk4D3OiWYi58GVmy4iksY31pW83w9q/TJCLeVlDreo9QuoQnLSq8zBOQ3qub35cNVlvgC870FzmzhNZZEGMi8GMlHDpp2abnpKXrrqMbWjvOiQ3QOuKoXerF1e0o6J4hWzn6B+q5+JgPaN3wN6BBmoZ6Ipig/2hPqVaSKIaPJCU3HDi6OhrZslZUQiyT3UD9prTGRXjqpOTJg3utm8yXTi2NkdAVsJsqymUrL4ueXUfjEg1CJW0lj4nXL31y2hrHOY1oA5ku9VV5iFsZmk4GoNoCaueZ9Qx24YsNZRdS1k1svz/YCC9NfygfC88kOHDxFB4OswdL/5fu3VhBeAZI3CmtEjXDbpXWU5x1UH1uBZVMUSnoYnMk2pDz9dzqkJitblKgiHHOKE0+XdrA5FEchLd7u/Szg4HXjwPhDmAB+SGjzGBx6pfybgbsfse3AIiaVsIFZzqdVuMzkY6msSmTSa+L60HxreyCOmWq5eqYPNXhJvwmnMHUHUW6KUhYKYd3rPO+W5NBekXrqAAsHAlMtdL7YQTpdx+f8ZTGbKOD7w2xvTpkRuBjZFmKJFatw+TDBZetnZimX4cyBKi2KO5Fl4UGXKCklDC0R0DfUzl8IzgOXRr45hQRKus4OkGXwXFCL/GnxkLCaSTbMZlQps1tcVHcnM2lcV9utvuAAAA="
+            alt="Lloyd Jefferson"
+            width="80"
+            height="80"
+          />
+        </a>
+
+        <a href="./index.html" class="header-logo-text">jefferson&#42;</a>
+      </div>
+      <div class="dropdown">
+        <button class="js-dropdown-toggle dropdown-toggle" type="button">
+          Menu
+        </button>
+        <ul class="js-dropdown-menu dropdown-menu">
+          <li>
+            <a class="js-header-menu-link header-menu-link" href="#"
+              >About me</a
+            >
+          </li>
+          <li>
+            <a class="js-header-menu-link header-menu-link" href="#"
+              >Benefits</a
+            >
+          </li>
+          <li>
+            <a class="js-header-menu-link header-menu-link" href="#"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a class="js-header-menu-link header-menu-link" href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <a href="#" class="header-order-btn">Order the project</a>
+      </div>
+      <button
+        class="header-btn js-open-menu"
+        aria-label="button-menu-open"
+        type="button"
+      >
+        <svg class="header-btn-open" width="28" height="28">
+          <use href="/The-Jedi-of-JavaScript-team/assets/icons-Dbx-Os8U.svg#icon-menu-05"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
 
     <main>
       <!-- Hero -->
@@ -170,7 +226,45 @@
     <p>work together</p>
 
     <!-- Modal Header -->
-    
+    <script
+  defer
+  src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+  integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+  crossorigin="anonymous"
+></script>
+<div class="backdrop js-menu-container" id="mobile-menu">
+  <div class="mob-wrap">
+    <button
+      class="mob-btn-close js-close-menu"
+      aria-label="button-menu-close"
+      type="button"
+    >
+      <svg class="btn-close" width="28" height="28">
+        <use href="/The-Jedi-of-JavaScript-team/assets/icons-Dbx-Os8U.svg#icon-x1"></use>
+      </svg>
+    </button>
+    <nav class="mob-menu">
+      <ul class="mob-list">
+        <li class="mob-item">
+          <a href="#" aria-label="" class="mob-link js-header-link">About me</a>
+        </li>
+        <li class="mob-item">
+          <a href="#" aria-label="" class="mob-link js-header-link">Benefits</a>
+        </li>
+        <li class="mob-item">
+          <a href="#" aria-label="" class="mob-link js-header-link">Projects</a>
+        </li>
+        <li class="mob-item">
+          <a href="#" aria-label="" class="mob-link js-header-link">FAQ</a>
+        </li>
+      </ul>
+    </nav>
+    <a href="#" aria-label="" class="modal-btn-order js-header-link"
+      >Order the project</a
+    >
+  </div>
+</div>
+
     <!-- Modal Work-together -->
     
 
