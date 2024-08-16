@@ -1,3 +1,13 @@
+.work-box{
+    position: relative;
+}
+
+.work-bg-image{
+    position: absolute;
+    left: 290px;
+    z-index: 0;
+}
+
 .work-title {
     color: #FAFAFA;
     font-size: 40px;
@@ -45,6 +55,17 @@
     outline: none;
 }
 
+.work-input.invalid {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+    display: none;
+}
+
 .work-btn {
     width: 100px;
     height: 100px;
@@ -56,6 +77,7 @@
     letter-spacing: -0.32px;
     margin-top: 32px;
     margin-bottom: 64px;
+    z-index: 2;
 }
 
 .work-btn:active,
@@ -78,6 +100,7 @@
     font-weight: 500;
     letter-spacing: -0.28px;
     padding: 10px 12px;
+    z-index: 2;
 
 }
 
@@ -87,28 +110,23 @@
     border: 1px solid #FAFAFA;
 }
 
-.work-background-img{
-background-image: image-set(
-    url(../img/work-together-img/glass1.webp) 1x,
-    url(../img/work-together-img/glass2.webp) 2x);
-}
-
 .work-modal-overlay {
     background: rgba(15, 15, 16, 0.60);
+    border: 1px rgba(250, 250, 250, 0.10);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 999;
-    /* opacity: 0; */
+    opacity: 0;
     pointer-events: none;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .work-modal {
     background: var(--Background, #1C1D20);
-    padding: 20px 20px 64px 16px;
+    padding: 20px 20px 64px 32px;
     border-radius: 20px;
     border: 1px rgba(250, 250, 250, 0.10);
     width: 343px;
@@ -125,6 +143,14 @@ background-image: image-set(
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-close-btn{
+    background-color: transparent;
+    border: none;
+    stroke: #FAFAFA;
+    margin-left: 269px;
+    margin-bottom: 0;
+}
+
 .work-modal-title {
     color: #FAFAFA;
     text-align: center;
@@ -132,7 +158,11 @@ background-image: image-set(
     font-weight: 600;
     line-height: 30px;
     letter-spacing: -0.4px;
-    margin-top: 22px;
+    text-transform: lowercase;
+}
+
+.work-modal-title::first-letter{
+    text-transform: uppercase;
 }
 
 .work-modal-info {
@@ -145,6 +175,11 @@ background-image: image-set(
 }
 
 @media screen and (min-width: 768px){
+
+.work-bg-image {
+    left: 570px;
+}
+
 .work-title{
     font-size: 64px;
     line-height: 64px;
@@ -182,39 +217,66 @@ gap: 8px;
     letter-spacing: -0.32px;
 }
 
-.work-background-img{
-    
+.work-modal {
+    padding-left: 64px;
+    width: 492px;
+
+}
+
+.modal-close-btn {
+margin-left: 384px;
+}
+
+.work-modal-title {
+margin-right: 44px;
+}
+
+.work-modal-info {
+margin-right: 44px;
 }
 
 }
 
 @media screen and (min-width: 1440px){
+
+.work-bg-image {
+    left: 860px;
+}
+
 .work-title {
 max-width: 524px;
 gap: 10px 20px;
 }
 
-    .work-form {
+.work-form {
     gap: 32px;
-    }
+}
 
-    .work-input {
+.work-input {
     min-width: 390px;
-    }
+}
 
-    .work-btn {
+.work-btn {
     margin-left: 54px;
-    }
+}
 
-    .contact-container {
+.work-modal-overlay {
 
-    }
+}
 
-    .work-contact {
+.work-modal {
 
-    }
+}
 
-.work-background-img{
+.modal-close-btn {
+
+}
+
+.work-modal-title {
+
+}
+
+.work-modal-info {
 
 }
 
