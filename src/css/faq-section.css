@@ -63,8 +63,18 @@
   z-index: 1;
 }
 
-.faq-panel.show {
+.faq-accordion-item.is-active .faq-panel {
   max-height: 200px;
   opacity: 1;
   visibility: visible;
+  overflow: auto;
+}
+
+.faq-text {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
