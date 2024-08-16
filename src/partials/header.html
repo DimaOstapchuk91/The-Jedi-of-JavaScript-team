@@ -1,1 +1,60 @@
-<p>Header</p>
+<header id="header" class="header">
+  <div class="header-box">
+    <div class="header-wrap container">
+      <div class="header-logo">
+        <a href="./index.html">
+          <img
+            class="header-logo-image"
+            srcset="
+              ./img/header-img/lloyd-portret@1x.webp 1x,
+              /img/header-img/lloyd-portret@2x.webp  2x
+            "
+            src="/img/header-img/lloyd-portret@1x.webp"
+            alt="Lloyd Jefferson"
+            width="80"
+            height="80"
+          />
+        </a>
+
+        <a href="./index.html" class="header-logo-text">jefferson&#42;</a>
+      </div>
+      <div class="dropdown">
+        <button class="js-dropdown-toggle dropdown-toggle" type="button">
+          Menu
+        </button>
+        <ul class="js-dropdown-menu dropdown-menu">
+          <li>
+            <a class="js-header-menu-link header-menu-link" href="#"
+              >About me</a
+            >
+          </li>
+          <li>
+            <a class="js-header-menu-link header-menu-link" href="#"
+              >Benefits</a
+            >
+          </li>
+          <li>
+            <a class="js-header-menu-link header-menu-link" href="#"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a class="js-header-menu-link header-menu-link" href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <a href="#" class="header-order-btn">Order the project</a>
+      </div>
+      <button
+        class="header-btn js-open-menu"
+        aria-label="button-menu-open"
+        type="button"
+      >
+        <svg class="header-btn-open" width="28" height="28">
+          <use href="/img/icons.svg#icon-menu-05"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
