@@ -10,14 +10,14 @@ new Accordion(document.querySelector('.faq-accordion-container'), {
     console.log(currentElement);
     const arrow = currentElement.querySelector('.faq-arrow');
     if (arrow) {
-      arrow.style.transform = 'rotate(180deg)'; // Rotates the arrow 180 degrees
+      arrow.style.transform = 'rotate(180deg)';
     }
   },
   onClose: currentElement => {
     console.log(currentElement);
     const arrow = currentElement.querySelector('.faq-arrow');
     if (arrow) {
-      arrow.style.transform = 'rotate(0deg)'; // Resets the arrow rotation
+      arrow.style.transform = 'rotate(0deg)';
     }
   },
 });
