@@ -14,9 +14,7 @@
   letter-spacing: -0.02em;
   color: #fafafa;
 }
-.benefit-title{
-  margin-top: 32px;
-}
+
 
 .benefits_2{
   margin-bottom: 32px;
@@ -91,6 +89,10 @@ padding: 18px 36px;
 
 .benefit-item {
   max-width: 332px;
+}
+
+.benefits_2{
+  margin: 0;
 }
 
   .benefit-title{
