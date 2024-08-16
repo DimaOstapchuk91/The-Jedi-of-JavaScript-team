@@ -31,6 +31,13 @@
   background-color: transparent;
   color: #fafafa;
   margin-top: 32px;
+  cursor: pointer;
+}
+
+.benefit-button:hover {
+  background-color: #ed3b44;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .benefit-item {
@@ -47,6 +54,22 @@
   flex-direction: column;
 }
 
-.benefit-box{
-    margin-top: 32px;
+.benefit-box {
+  margin-top: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .benefit-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
