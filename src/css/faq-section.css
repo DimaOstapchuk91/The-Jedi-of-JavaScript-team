@@ -62,3 +62,9 @@
   transition: max-height Is ease, opacity Is ease, visibility Is;
   z-index: 1;
 }
+
+.faq-panel.show {
+  max-height: 200px;
+  opacity: 1;
+  visibility: visible;
+}
