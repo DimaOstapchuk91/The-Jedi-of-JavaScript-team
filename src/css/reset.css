@@ -9,7 +9,7 @@ html {
 
 body {
   font-family: 'Inter Tight', sans-serif;
-  background-color: #242527;
+  background-color: #1c1d20;
 }
 
 h1,
@@ -80,6 +80,7 @@ address {
     max-width: 768px;
     padding: 0 32px;
   }
+
   .section {
     padding: 48px 0;
   }
@@ -89,6 +90,7 @@ address {
   .container {
     max-width: 1440px;
   }
+
   .section {
     padding: 82px 0;
   }
