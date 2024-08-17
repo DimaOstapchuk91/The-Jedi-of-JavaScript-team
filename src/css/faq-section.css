@@ -49,6 +49,6 @@
   max-height: 0;
   overflow: hidden;
 }
-.faq-accordion-item.is-active .faq-panel {
-  max-height: 100%;
+.faq-accordion-item.is-active .title-btn-box {
+  margin-bottom: 11px;
 }
