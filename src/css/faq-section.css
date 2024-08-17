@@ -30,11 +30,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  width: 49px;
   height: 40px;
   background-color: transparent;
-  border-radius: 100%;
-  border: 1px solid #242527;
+  border-radius: 109%;
+  border: lpx solid #242527;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.faq-btn:hover,
+.faq-btn:focus {
+  box-shadow: 0 4px 15px Drgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
 .faq-arrow {
