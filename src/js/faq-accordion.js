@@ -6,6 +6,7 @@ new Accordion(document.querySelector('.faq-accordion-container'), {
   elementClass: 'faq-accordion-item',
   panelClass: 'faq-panel',
   triggerClass: 'faq-trigger',
+  activeClass: 'is-faq-active',
   onOpen: function (currentElement) {
     const arrow = currentElement.querySelector('.faq-arrow');
     if (arrow) {

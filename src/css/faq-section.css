@@ -6,11 +6,6 @@
 .title-btn-box {
   display: flex;
   justify-content: space-between;
-  padding-left: 32px;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  padding-right: 32px;
-  gap: 32px;
 }
 
 .faq-accordion-container {
@@ -39,12 +34,12 @@
   height: 35px;
   background-color: transparent;
   border-radius: 100%;
-  border: lpx solid #242527;
+  border: 1px solid #242527;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .faq-btn:hover,
 .faq-btn:focus {
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   transform: scale(1.05);
 }
 
@@ -59,7 +54,7 @@
 .faq-panel {
   overflow: hidden;
 }
-.faq-accordion-item.is-active .title-btn-box {
+.faq-accordion-item.is-faq-active .title-btn-box {
   margin-bottom: 12px;
 }
 
