@@ -45,3 +45,10 @@
 .faq-text {
   color: #fafafa60;
 }
+.faq-panel {
+  max-height: 0;
+  overflow: hidden;
+}
+.faq-accordion-item.is-active .faq-panel {
+  max-height: 100%;
+}
