@@ -123,7 +123,7 @@ display: flex;
 }
 
 .benefit-button:active {
-  color: #000
+  color: rgba(250, 250, 250, 0.2)
 }
 
 .benefit-button:active:after {
@@ -149,19 +149,15 @@ display: flex;
 
 }
 
-.benefit-button:hover {
-border-color: #ed3b44;
-background-color: #ed3b44;
-transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-  transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 .benefit-button {
 padding: 18px 36px;
-  border: none;
+border: 1px solid rgba(250, 250, 250, 0.2);
+
   outline: none;
   color: #fff;
-  background: #111;
+  background: #1C1D20;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -169,7 +165,7 @@ padding: 18px 36px;
 }
 
 .benefit-button:active {
-  color: #000
+  color: #1C1D20
 }
 
 .benefit-button:active:after {
@@ -186,7 +182,7 @@ padding: 18px 36px;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: #1C1D20;
   left: 0;
   top: 0;
   border-radius: 60px;
