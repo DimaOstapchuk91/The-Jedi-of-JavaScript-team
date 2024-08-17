@@ -8,6 +8,19 @@
     z-index: 0;
 }
 
+/*цвет автозаполнения, может не работать, но вроде должен*/
+@-webkit-keyframes autofill {
+    to {
+        color: inherit;
+        background: transparent;
+    }
+}
+.work-input:-webkit-autofill {
+    background-color: #ab606033 !important;
+    color: white;
+}
+
+
 .work-title {
     color: #FAFAFA;
     font-size: 40px;
@@ -45,6 +58,33 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+/* Стили для поля ввода */
+.work-input {
+    border-bottom: 2px solid rgba(250, 250, 250, 0.5);
+    /* Начальная стилизация */
+    transition: border-color 0.3s ease;
+    /* Плавное изменение цвета */
+}
+
+/* Красная подсветка */
+.work-input.invalid {
+    border-color: red;
+}
+
+/* Зеленая подсветка */
+.work-input.valid {
+    border-color: green;
+}
+
+/* Сообщение об ошибке */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+    display: none;
+    /* По умолчанию скрыто */
 }
 
 .work-input:active,
@@ -122,6 +162,8 @@
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .work-modal {
