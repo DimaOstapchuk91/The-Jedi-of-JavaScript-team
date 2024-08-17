@@ -35,10 +35,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 49px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background-color: transparent;
-  border-radius: 109%;
+  border-radius: 100%;
   border: lpx solid #242527;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
