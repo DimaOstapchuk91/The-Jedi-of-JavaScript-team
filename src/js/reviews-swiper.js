@@ -1,4 +1,4 @@
-import { Swiper, Navigation, axios, iziToast } from './libs';
+import { Swiper, Navigation, Keyboard, axios, iziToast } from './libs';
 
 const refs = {
   swiper: document.querySelector('.reviews-container'),
@@ -19,10 +19,6 @@ const swiperForReviews = new Swiper(refs.swiper, {
     pauseOnMouseEnter: true,
   },
 
-  keyboard: {
-    enabled: true,
-  },
-
   slidesPerView: 1,
   spaceBetween: 16,
 
@@ -39,11 +35,15 @@ const swiperForReviews = new Swiper(refs.swiper, {
     },
   },
 
-  modules: [Navigation],
+  modules: [Navigation, Keyboard],
 
   navigation: {
     nextEl: refs.swiperNext,
     prevEl: refs.swiperPrev,
+  },
+
+  keyboard: {
+    enabled: true,
   },
 });
 
