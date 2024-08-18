@@ -48,8 +48,9 @@
   height: 34px;
   background-color: transparent;
   border-radius: 100%;
+  cursor: pointer;
   border: 1px solid rgba(250, 250, 250, 0.2);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 .faq-btn:hover,
 .faq-btn:focus {
