@@ -36,13 +36,13 @@
   background-color: transparent;
   color: #fafafa;
   cursor: pointer;
-
+transition: box-shadow 0.3s ease;
 }
 
 .benefit-button:hover,
 .benefit-button:focus {
-box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-transform: scaleX(1.05);
+box-shadow: 0 0px 15px rgba(255, 255, 255, 0.2);
+
 }
 
 .benefit-item {
