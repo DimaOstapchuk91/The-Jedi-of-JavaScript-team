@@ -68,6 +68,41 @@
   border-right: none;
 }
 
+@media screen and (max-width: 767px) {
+  .faq-accordion-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-accordion-item {
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .faq-container li:nth-child(odd),
+  .faq-container li:nth-child(even) {
+    padding: 16px;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .faq-accordion-container {
+    flex-direction: column;
+  }
+
+  .faq-accordion-item {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .faq-container li:nth-child(odd),
+  .faq-container li:nth-child(even) {
+    padding: 24px 16px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
