@@ -7,7 +7,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../img/hero-img/Hero-mob-1x-min.png');
+    background-image: url('./img/hero-img/Hero-mob-1x-min.png');
 }
 
 .hero-text {
@@ -60,7 +60,7 @@
 
 @media (min-width: 768px) {
     .hero-section {
-        background-image: url('../img/hero-img/Hero-tab-1x-min.png');
+        background-image: url('./img/hero-img/Hero-tab-1x-min.png');
     }
 
     .hero-text {
@@ -105,7 +105,7 @@
 
 @media (min-width: 1024px) {
     .hero-section {
-        background-image: url('../img/hero-img/Hero-red-1x-min.png');
+        background-image: url('./img/hero-img/Hero-red-1x-min.png');
     }
 
     .hero-text {
