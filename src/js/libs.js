@@ -19,3 +19,4 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 export { Swiper, Navigation, Pagination, Keyboard, axios, Accordion, iziToast };
+
