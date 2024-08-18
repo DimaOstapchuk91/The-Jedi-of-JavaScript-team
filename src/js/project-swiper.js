@@ -1,18 +1,19 @@
-import { Swiper, Navigation } from './libs';
+import { Swiper, Navigation, Keyboard } from './libs';
 
-const swiper = new Swiper('.swiper-container', {
-    lazyPreloadPrevNext: 0,
+const swiper = new Swiper('.project-swiper-container', {
     grabCursor: true,
     direction: 'horizontal',
 
     speed: 300,
 
     slidesPerView: 1,
-    spaceBetween: 600,
+    spaceBetween: 10,
+
     keyboard: {
         enabled: true,
         onlyInViewport: true,
     },
+
     breakpoints: {
         320: {
             slidesPerView: 1,
@@ -25,14 +26,9 @@ const swiper = new Swiper('.swiper-container', {
         1440: {
             slidesPerView: 1,
             spaceBetween: 20,
-            loop: true,
-            keyboard: {
-                enabled: true,
-                onlyInViewport: true,
-            },
         },
     },
-    modules: [Navigation],
+    modules: [Navigation, Keyboard],
 
     navigation: {
         nextEl: '.carousel-button.next',
