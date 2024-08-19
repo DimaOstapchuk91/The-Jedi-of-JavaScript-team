@@ -12,9 +12,7 @@ const emailRegex = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 function openModal(message) {
   modalMessage.textContent = message;
-
   modalTitle.textContent = 'Thank you for your interest in cooperation!';
-
   modalOverlay.style.opacity = '1';
   modalOverlay.style.pointerEvents = 'auto';
   modalOverlay.style.visibility = 'visible';
@@ -27,12 +25,12 @@ function openErrModal(message) {
   modalOverlay.style.pointerEvents = 'auto';
   modalOverlay.style.visibility = 'visible';
 }
+
 function closeModal() {
   modalOverlay.style.opacity = '0';
   modalOverlay.style.pointerEvents = 'none';
   modalOverlay.style.visibility = 'hidden';
 }
-
 
 function validateEmail() {
   const emailValue = emailInput.value.trim();
@@ -51,17 +49,13 @@ function validateEmail() {
   }
 }
 
-
 emailInput.addEventListener('blur', validateEmail);
 
-form.addEventListener('submit', async function(event) {
+form.addEventListener('submit', async function (event) {
   event.preventDefault();
 
   const formData = new FormData(form);
   const emailValue = formData.get('email') ? formData.get('email').trim() : '';
-  const comment = formData.get('comments') ? formData.get('comments').trim() : '';
-  
-
 
   if (!emailValue.match(emailRegex)) {
     emailInput.classList.add('invalid');
@@ -71,45 +65,48 @@ form.addEventListener('submit', async function(event) {
     emailInput.classList.remove('invalid');
     emailError.style.display = 'none';
   }
-
-  
+  const comment = formData.get('comments')
+    ? formData.get('comments').trim()
+    : '';
 
   try {
-    const response = await axios.post('https://portfolio-js.b.goit.study/api/requests', {
-      email: emailValue,
-      comment: comment,
-    });
+    const response = await axios.post(
+      'https://portfolio-js.b.goit.study/api/requests',
+      {
+        email: emailValue,
+        comment: comment,
+      }
+    );
 
     if (response.status === 201) {
-      openModal('The manager will contact you shortly to discuss further details and opportunities for cooperation. Please stay in touch.');
-       form.reset(); 
+      openModal(
+        'The manager will contact you shortly to discuss further details and opportunities for cooperation. Please stay in touch.'
+      );
+      form.reset();
       validateEmail();
     } else {
       openErrModal(`Error: ${response.data.message}`);
     }
-
   } catch (error) {
-if (error.response) {
-      openErrModal(`Error: ${error.response.data.message || 'An unexpected error occurred.'}`);
-    } else if (error.request) {
-      openErrModal('No response received from server. Please try again later.');
+    if (error.response && error.response.status === 400) {
+      openErrModal('Error 400: Bad Request. Please check your input.');
+    } else if (error.response && err.response.status === 404) {
+      openErrModal('Error 404: Resource not found.');
     } else {
-      openErrModal('An error occurred while setting up the request. Please try again.');
+      openErrModal('An unexpected error occurred. Please try again later.');
     }
-
   }
 });
 
 closeModalBtn.addEventListener('click', closeModal);
 
-modalOverlay.addEventListener('click', function(event) {
+modalOverlay.addEventListener('click', function (event) {
   if (event.target === modalOverlay) {
     closeModal();
   }
 });
 
-
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeModal();
   }
