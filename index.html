@@ -19,7 +19,7 @@
     <script type="module" crossorigin src="/The-Jedi-of-JavaScript-team/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/The-Jedi-of-JavaScript-team/assets/vendor-cRKnTd4S.js">
     <link rel="stylesheet" crossorigin href="/The-Jedi-of-JavaScript-team/assets/vendor-ClcSq75w.css">
-    <link rel="stylesheet" crossorigin href="/The-Jedi-of-JavaScript-team/assets/index-Dy05D9Zn.css">
+    <link rel="stylesheet" crossorigin href="/The-Jedi-of-JavaScript-team/assets/index-CogtCBMI.css">
   </head>
   <body>
     <!-- Header -->
@@ -486,15 +486,17 @@
       </h2>
       <form class="work-form" id="work-form">
         <div class="work-input-container">
-          <input
-            class="work-input"
-            type="email"
-            name="email"
-            id="email-input"
-            placeholder="clients@gmail.com"
-            required
-            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-          />
+          <label>
+            <input
+              class="work-input"
+              type="email"
+              name="email"
+              id="email-input"
+              placeholder="clients@gmail.com"
+              autocomplete="user-email"
+              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            />
+          </label>
           <p class="error-message" id="email-error">
             Invalid email, try again.
           </p>
@@ -515,7 +517,6 @@
         >
         <a class="work-contact" href="tel:+3801111111111">+380 11 1111 11 11</a>
       </div>
-
     </div>
   </div>
   <div class="work-modal-overlay">
