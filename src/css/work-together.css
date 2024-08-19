@@ -1,11 +1,24 @@
+.footer{
+    padding: 32px 0;
+}
+
 .work-box {
     position: relative;
+    overflow: hidden;
+}
+
+.work-container {
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .work-bg-image {
     position: absolute;
     left: 290px;
+    top: 0;
     z-index: 0;
+    width: 728px;
+    transform: translateY(-32px);
 }
 
 .work-title {
@@ -31,6 +44,7 @@
     gap: 16px;
 }
 
+
 .work-input {
     display: inline-flex;
     flex-direction: column;
@@ -45,6 +59,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    z-index: 2;
 }
 
 .work-input:active,
@@ -56,14 +71,17 @@
 }
 
 .work-input.invalid {
-    border-color: red;
+    border-bottom: 2px solid red;
 }
 
 .error-message {
     color: red;
     font-size: 14px;
-    margin-top: 8px;
     display: none;
+}
+
+.work-input.invalid + .error-message{
+    display: block;
 }
 
 .work-btn {
@@ -78,6 +96,7 @@
     margin-top: 32px;
     margin-bottom: 64px;
     z-index: 2;
+    cursor: pointer;
 }
 
 .work-btn:active,
@@ -149,6 +168,7 @@
     stroke: #FAFAFA;
     margin-left: 269px;
     margin-bottom: 0;
+    cursor: pointer;
 }
 
 .work-modal-title {
@@ -175,89 +195,119 @@
 }
 
 @media screen and (min-width: 768px) {
+    
+.footer {
+    padding: 48px 0;
+}
 
-    .work-bg-image {
-        left: 570px;
-    }
+.work-container {
+padding-top: 80px;
+padding-bottom: 169px;
+}
 
-    .work-title {
-        font-size: 64px;
-        line-height: 64px;
-        letter-spacing: -1.92px;
-        margin-bottom: 64px;
-    }
+.work-bg-image {
+    left: 480px;
+    transform: translateY(-48px);
+}
 
-    .work-form {
-        flex-direction: row;
-        align-items: center;
-        gap: 32px;
-        margin-bottom: 78px;
-    }
+.work-title {
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: -1.92px;
+    margin-bottom: 64px;
+}
 
-    .work-input {
-        height: 44px;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 24px;
-    }
+.work-form {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 78px;
+}
 
-    .work-btn {
-        width: 150px;
-        height: 150px;
-        margin: 0;
-    }
+.error{
+    display: flex;
+    flex-direction: column;
+    
+}
 
-    .contact-container {
-        gap: 8px;
-    }
+.work-input {
+    height: 44px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+   
+}
 
-    .work-contact {
-        padding: 18px 32px;
-        font-size: 16px;
-        letter-spacing: -0.32px;
-    }
+.work-input.invalid {
+    margin-bottom: 4px;
+}
 
-    .work-modal {
-        padding-left: 64px;
-        width: 492px;
+.error-message {
+    margin-top: 4px;
+}
 
-    }
+.work-btn {
+    width: 150px;
+    height: 150px;
+    margin: 0;
+}
 
-    .modal-close-btn {
-        margin-left: 384px;
-    }
+.contact-container {
+    gap: 8px;
+}
 
-    .work-modal-title {
-        margin-right: 44px;
-    }
+.work-contact {
+    padding: 18px 32px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+}
 
-    .work-modal-info {
-        margin-right: 44px;
-    }
+.work-modal {
+    padding-left: 64px;
+    width: 492px;
+
+}
+
+.modal-close-btn {
+    margin-left: 384px;
+}
+
+.work-modal-title {
+    margin-right: 44px;
+}
+
+.work-modal-info {
+    margin-right: 44px;
+}
 
 }
 
 @media screen and (min-width: 1440px) {
 
-    .work-bg-image {
-        left: 860px;
-    }
+.footer {
+    padding: 82px 0;
+}
+    
+.work-bg-image {
+    left: 850px;
+    max-height: 748px;
+}
 
-    .work-title {
-        max-width: 524px;
-        gap: 10px 20px;
-    }
+.work-title {
+    max-width: 524px;
+    gap: 10px 20px;
+}
 
-    .work-form {
-        gap: 32px;
-    }
+.work-form {
+    gap: 32px;
+}
 
-    .work-input {
-        min-width: 390px;
-    }
+.work-input {
+    min-width: 390px;
+}
 
-    .work-btn {
-        margin-left: 54px;
-    }
+.work-btn {
+    margin-left: 54px;
+}
 
 }
