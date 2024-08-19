@@ -56,7 +56,9 @@ form.addEventListener('submit', async function(event) {
 
   const formData = new FormData(form);
   const emailValue = formData.get('email') ? formData.get('email').trim() : '';
+  const comment = formData.get('comments') ? formData.get('comments').trim() : '';
   
+
 
   if (!emailValue.match(emailRegex)) {
     emailInput.classList.add('invalid');
@@ -66,7 +68,7 @@ form.addEventListener('submit', async function(event) {
     emailInput.classList.remove('invalid');
     emailError.style.display = 'none';
   }
-  const comment = formData.get('comments') ? formData.get('comments').trim() : '';
+  
 
   try {
     const response = await axios.post('https://portfolio-js.b.goit.study/api/requests', {
@@ -83,8 +85,13 @@ form.addEventListener('submit', async function(event) {
     }
 
   } catch (error) {
-    console.log(error);
-    openErrModal('An unexpected error occurred. Please try again later.');
+if (error.response) {
+      openErrModal(`Error: ${error.response.data.message || 'An unexpected error occurred.'}`);
+    } else if (error.request) {
+      openErrModal('No response received from server. Please try again later.');
+    } else {
+      openErrModal('An error occurred while setting up the request. Please try again.');
+    }
   }
 });
 
