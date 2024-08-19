@@ -49,8 +49,7 @@ function validateEmail() {
   }
 }
 
-// Використовуємо подію input замість blur, щоб перевірка відбувалася при кожному введенні
-emailInput.addEventListener('input', validateEmail);
+emailInput.addEventListener('input', event => { validateEmail(); } );
 
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
@@ -59,7 +58,6 @@ form.addEventListener('submit', async function(event) {
   const emailValue = formData.get('email') ? formData.get('email').trim() : '';
   const comment = formData.get('comments') ? formData.get('comments').trim() : '';
 
-  // Перевірка заповнення обох полів
   if (!emailValue || !comment) {
     if (!emailValue.match(emailRegex)) {
       emailInput.classList.add('invalid');
@@ -72,7 +70,6 @@ form.addEventListener('submit', async function(event) {
     return;
   }
 
-  // Якщо email валідний, видаляємо помилку
   if (emailValue.match(emailRegex)) {
     emailInput.classList.remove('invalid');
     emailError.style.display = 'none';
