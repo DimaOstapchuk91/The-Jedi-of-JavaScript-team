@@ -1,67 +1,80 @@
-<section class="section" id="work-together">
+<footer class="footer" id="work-together">
   <div class="container work-box">
-    <img
-      class="work-bg-image"
-      srcset="
-        ../img/work-together-img/glass1.jpg 1x,
-        ../img/work-together-img/glass2.jpg 2x
-      "
-      src="../img/work-together-img/glass1.jpg"
-      alt="glass-background"
-    />
-    <h2 class="work-title">
-      <picture class="work-img">
-        <source
-          media="(min-width: 768px)"
-          srcset="
-            ../img/work-together-img/tab-desc1.png 1x,
-            ../img/work-together-img/tab-desc2.png 2x
-          "
-          type="image/png"
-        />
-        <source
-          media="(max-width: 767px)"
-          srcset="
-            ../img/work-together-img/mob1.png 1x,
-            ../img/work-together-img/mob2.png 2x
-          "
-          type="image/png"
-        />
-        <img
-          src="../img/work-together-img/mob1.png"
-          alt="Lloyd Jefferson"
-          loading="lazy"
-        />
-      </picture>
-      Let’s <span class="work-span">work</span>together
-    </h2>
-    <form class="work-form" action="" id="work-form">
-      <p class="error-message" id="email-error">Invalid email, try again</p>
-      <input
-        class="work-input"
-        type="email"
-        name="email"
-        id="email-input"
-        placeholder="clients@gmail.com"
-        required
-        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+    <div class="work-container">
+      <img
+        class="work-bg-image"
+        srcset="
+          ./img/work-together-img/glass1.jpg 1x,
+          ./img/work-together-img/glass2.jpg 2x
+        "
+        src="./img/work-together-img/glass1.jpg"
+        alt="glass-background"
       />
-      <!--Не отправлялся запрос, потому что не видело коментарии. Добавил имя и все заработало-->
-      <input class="work-input" type="text" placeholder="comments" name="comments"/>
-      <button class="work-btn" type="submit">Send</button>
-    </form>
-    <div class="contact-container">
-      <a class="work-contact" href="mailto:lloydjefferson@gmail.com">
-        lloydjefferson@gmail.com
-      </a>
-      <a class="work-contact" href="tel:+3801111111111">+380 11 1111 11 11</a>
+      <h2 class="work-title">
+        <picture class="work-img">
+          <source
+            media="(min-width: 768px)"
+            srcset="
+              ./img/work-together-img/tab-desc1.png 1x,
+              ./img/work-together-img/tab-desc2.png 2x
+            "
+            type="image/png"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="
+              ./img/work-together-img/mob1.png 1x,
+              ./img/work-together-img/mob2.png 2x
+            "
+            type="image/png"
+          />
+          <img
+            src="./img/work-together-img/mob1.png"
+            alt="Lloyd Jefferson"
+            loading="lazy"
+          />
+        </picture>
+        Let’s <span class="work-span">work</span>together
+      </h2>
+      <form class="work-form" id="work-form">
+        <div class="work-input-container">
+          <input
+            class="work-input"
+            type="email"
+            name="email"
+            id="email-input"
+            placeholder="clients@gmail.com"
+            required
+            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          />
+          <p class="error-message" id="email-error">
+            Invalid email, try again.
+          </p>
+        </div>
+        <div class="work-input-container">
+          <input
+            class="work-input"
+            type="text"
+            name="comments"
+            placeholder="comments"
+          />
+        </div>
+        <button class="work-btn" type="submit">Send</button>
+      </form>
+      <div class="contact-container">
+        <a class="work-contact" href="mailto:lloydjefferson@gmail.com"
+          >lloydjefferson@gmail.com</a
+        >
+        <a class="work-contact" href="tel:+3801111111111">+380 11 1111 11 11</a>
+      </div>
+
     </div>
   </div>
   <div class="work-modal-overlay">
     <div class="work-modal">
       <button class="modal-close-btn" type="button">
         <svg width="22" height="22">
-          <use href="../img/icons.svg#icon-x1"></use>
+          <use href="/img/icons.svg#icon-x1"></use>
         </svg>
       </button>
       <h2 class="work-modal-title">
@@ -73,4 +86,4 @@
       </p>
     </div>
   </div>
-</section>
+</footer>

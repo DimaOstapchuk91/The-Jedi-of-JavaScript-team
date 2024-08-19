@@ -12,12 +12,14 @@ const emailRegex = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 function openModal(message) {
   modalMessage.textContent = message;
-  modalTitle.textContent = ' Thank you for your interest in cooperation!';
+
+  modalTitle.textContent = 'Thank you for your interest in cooperation!';
+
   modalOverlay.style.opacity = '1';
   modalOverlay.style.pointerEvents = 'auto';
   modalOverlay.style.visibility = 'visible';
 }
-//Функція щоб відкривати помилкове вікно
+
 function openErrModal(message) {
   modalMessage.textContent = message;
   modalTitle.textContent = 'Something went wrong';
@@ -31,32 +33,35 @@ function closeModal() {
   modalOverlay.style.visibility = 'hidden';
 }
 
-// валидация почты. Чтоб Динамично подсвечивать ввод
+
 function validateEmail() {
   const emailValue = emailInput.value.trim();
   if (emailValue === '') {
-    emailInput.classList.remove('invalid'); // Убираем красную подсветку
-    emailInput.classList.remove('valid');   // Убираем зеленую подсветку
+    emailInput.classList.remove('invalid');
+    emailInput.classList.remove('valid');
     emailError.style.display = 'none';
-  }// Скрыть сообщение об ошибке
-  else if (!emailValue.match(emailRegex)) {
-    emailInput.classList.add('invalid'); // Красная подсветка
-    emailInput.classList.remove('valid'); // Убираем зеленую подсветку если была
-    emailError.style.display = 'block'; // Показать сообщение об ошибке
+  } else if (!emailValue.match(emailRegex)) {
+    emailInput.classList.add('invalid');
+    emailInput.classList.remove('valid');
+    emailError.style.display = 'block';
   } else {
-    emailInput.classList.remove('invalid'); // Убираем красную подсветку если была
-    emailInput.classList.add('valid'); // Зеленая подсветка
-    emailError.style.display = 'none'; // Скрыть сообщение об ошибке
+    emailInput.classList.remove('invalid');
+    emailInput.classList.add('valid');
+    emailError.style.display = 'none';
   }
 }
-//чтобы убрать динамичность - поменять тут. Тут стоит blur - по потере фокуса нам хватит думаю. Для проверки по букве, чтоб еще динамичнее - ставьте input.
+
+
 emailInput.addEventListener('blur', validateEmail);
 
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
   const formData = new FormData(form);
-  const emailValue = formData.get('email').trim();
+  const emailValue = formData.get('email') ? formData.get('email').trim() : '';
+  const comment = formData.get('comments') ? formData.get('comments').trim() : '';
+  
+
 
   if (!emailValue.match(emailRegex)) {
     emailInput.classList.add('invalid');
@@ -66,27 +71,32 @@ form.addEventListener('submit', async function(event) {
     emailInput.classList.remove('invalid');
     emailError.style.display = 'none';
   }
-  const comment = formData.get('comments').trim();
+
+  
 
   try {
-    //!!!ТУТ САМЕ МІНЯТИ ПОСИЛАННЯ СЕРВЕРА(якщо щось неправильно вказано)
-    const response = await axios.post('https://portfolio-js.b.goit.study/api-docs/#/Requests/post_requests', {
+    const response = await axios.post('https://portfolio-js.b.goit.study/api/requests', {
       email: emailValue,
-      comments: comment,
+      comment: comment,
     });
 
-    const result = response.data;
-
-    if (response.ok || response.status === 200) { // если ответ успешный
+    if (response.status === 201) {
       openModal('The manager will contact you shortly to discuss further details and opportunities for cooperation. Please stay in touch.');
+       form.reset(); 
       validateEmail();
     } else {
-      openErrModal(`Error: ${result.message}`);
+      openErrModal(`Error: ${response.data.message}`);
     }
 
   } catch (error) {
-    console.log(error);
-    openErrModal('An unexpected error occurred. Please write another information or try later.');
+if (error.response) {
+      openErrModal(`Error: ${error.response.data.message || 'An unexpected error occurred.'}`);
+    } else if (error.request) {
+      openErrModal('No response received from server. Please try again later.');
+    } else {
+      openErrModal('An error occurred while setting up the request. Please try again.');
+    }
+
   }
 });
 
@@ -98,9 +108,10 @@ modalOverlay.addEventListener('click', function(event) {
   }
 });
 
-//закрытие по клавише Escape
+
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     closeModal();
   }
 });
+
