@@ -51,8 +51,7 @@ function validateEmail() {
   }
 }
 
-
-emailInput.addEventListener('blur', validateEmail);
+emailInput.addEventListener('input', validateEmail);
 
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
@@ -60,19 +59,23 @@ form.addEventListener('submit', async function(event) {
   const formData = new FormData(form);
   const emailValue = formData.get('email') ? formData.get('email').trim() : '';
   const comment = formData.get('comments') ? formData.get('comments').trim() : '';
-  
 
-
-  if (!emailValue.match(emailRegex)) {
-    emailInput.classList.add('invalid');
-    emailError.style.display = 'block';
+  if (!emailValue || !comment) {
+    if (!emailValue.match(emailRegex)) {
+      emailInput.classList.add('invalid');
+      emailError.style.display = 'block';
+    } else {
+      emailInput.classList.remove('invalid');
+      emailError.style.display = 'none';
+    }
+    openErrModal('Please fill in both fields.');
     return;
-  } else {
+  }
+
+  if (emailValue.match(emailRegex)) {
     emailInput.classList.remove('invalid');
     emailError.style.display = 'none';
   }
-
-  
 
   try {
     const response = await axios.post('https://portfolio-js.b.goit.study/api/requests', {
@@ -82,21 +85,19 @@ form.addEventListener('submit', async function(event) {
 
     if (response.status === 201) {
       openModal('The manager will contact you shortly to discuss further details and opportunities for cooperation. Please stay in touch.');
-       form.reset(); 
+      form.reset();
       validateEmail();
     } else {
-      openErrModal(`Error: ${response.data.message}`);
+      openErrModal(`Error: ${response.data.message || 'Unknown error occurred.'}`);
     }
-
   } catch (error) {
-if (error.response) {
-      openErrModal(`Error: ${error.response.data.message || 'An unexpected error occurred.'}`);
-    } else if (error.request) {
-      openErrModal('No response received from server. Please try again later.');
+    if (err.response && err.response.status === 400) {
+      openErrModal('Error 400: Bad Request. Please check your input.');
+    } else if (err.response && err.response.status === 404) {
+      openErrModal('Error 404: Resource not found.');
     } else {
-      openErrModal('An error occurred while setting up the request. Please try again.');
+      openErrModal('An unexpected error occurred. Please try again later.');
     }
-
   }
 });
 
