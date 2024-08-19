@@ -58,7 +58,7 @@
     margin-bottom: 32px;
 }
 
-.project-link {
+.comand-project-link {
     font-size: 16px;
     letter-spacing: -0.02em;
     text-align: center;
@@ -100,6 +100,7 @@
     height: 52px;
     background: transparent;
     transition: border-color 300ms ease;
+    cursor: pointer;
 }
 
 .project-button:not(:disabled):hover {
