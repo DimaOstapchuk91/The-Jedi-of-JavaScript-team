@@ -219,15 +219,9 @@ padding-bottom: 169px;
 
 .work-form {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: 32px;
     margin-bottom: 78px;
-}
-
-.error{
-    display: flex;
-    flex-direction: column;
-    
 }
 
 .work-input {
@@ -235,7 +229,6 @@ padding-bottom: 169px;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-   
 }
 
 .work-input.invalid {
@@ -243,7 +236,7 @@ padding-bottom: 169px;
 }
 
 .error-message {
-    margin-top: 4px;
+    order: 2;
 }
 
 .work-btn {

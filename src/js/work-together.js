@@ -56,6 +56,7 @@ form.addEventListener('submit', async function(event) {
 
   const formData = new FormData(form);
   const emailValue = formData.get('email') ? formData.get('email').trim() : '';
+  
 
   if (!emailValue.match(emailRegex)) {
     emailInput.classList.add('invalid');
@@ -70,10 +71,10 @@ form.addEventListener('submit', async function(event) {
   try {
     const response = await axios.post('https://portfolio-js.b.goit.study/api/requests', {
       email: emailValue,
-      comments: comment,
+      comment: comment,
     });
 
-    if (response.status === 200) {
+    if (response.status === 201) {
       openModal('The manager will contact you shortly to discuss further details and opportunities for cooperation. Please stay in touch.');
        form.reset(); 
       validateEmail();
