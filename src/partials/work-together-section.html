@@ -37,22 +37,28 @@
         Let’s <span class="work-span">work</span>together
       </h2>
       <form class="work-form" id="work-form">
-        <input
-          class="work-input"
-          type="email"
-          name="email"
-          id="email-input"
-          placeholder="clients@gmail.com"
-          required
-          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-        />
-        <p class="error-message" id="email-error">Invalid email, try again.</p>
-        <input
-          class="work-input"
-          type="text"
-          name="comments"
-          placeholder="comments"
-        />
+        <div class="work-input-container">
+          <input
+            class="work-input"
+            type="email"
+            name="email"
+            id="email-input"
+            placeholder="clients@gmail.com"
+            required
+            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          />
+          <p class="error-message" id="email-error">
+            Invalid email, try again.
+          </p>
+        </div>
+        <div class="work-input-container">
+          <input
+            class="work-input"
+            type="text"
+            name="comments"
+            placeholder="comments"
+          />
+        </div>
         <button class="work-btn" type="submit">Send</button>
       </form>
       <div class="contact-container">

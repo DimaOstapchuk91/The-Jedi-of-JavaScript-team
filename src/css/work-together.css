@@ -44,6 +44,12 @@
     gap: 16px;
 }
 
+.work-input-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+}
 
 .work-input {
     display: inline-flex;
@@ -74,10 +80,15 @@
     border-bottom: 2px solid red;
 }
 
+.work-input[type="email"]:valid {
+    border-bottom: 2px solid green;
+}
+
 .error-message {
     color: red;
     font-size: 14px;
     display: none;
+    margin-top: 4px;
 }
 
 .work-input.invalid + .error-message{
@@ -206,7 +217,7 @@ padding-bottom: 169px;
 }
 
 .work-bg-image {
-    left: 480px;
+    left: 570px;
     transform: translateY(-48px);
 }
 
@@ -224,6 +235,10 @@ padding-bottom: 169px;
     margin-bottom: 78px;
 }
 
+.work-input-container{
+    flex-grow: 1;
+}
+
 .work-input {
     height: 44px;
     font-size: 16px;
@@ -237,6 +252,7 @@ padding-bottom: 169px;
 
 .error-message {
     order: 2;
+    margin-top: 4px;
 }
 
 .work-btn {
@@ -295,8 +311,12 @@ padding-bottom: 169px;
     gap: 32px;
 }
 
+.work-input-container{
+    max-width: 390px;
+}
+
 .work-input {
-    min-width: 390px;
+    width: 390px;
 }
 
 .work-btn {
