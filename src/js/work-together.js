@@ -12,7 +12,9 @@ const emailRegex = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 function openModal(message) {
   modalMessage.textContent = message;
+
   modalTitle.textContent = 'Thank you for your interest in cooperation!';
+
   modalOverlay.style.opacity = '1';
   modalOverlay.style.pointerEvents = 'auto';
   modalOverlay.style.visibility = 'visible';
@@ -25,12 +27,12 @@ function openErrModal(message) {
   modalOverlay.style.pointerEvents = 'auto';
   modalOverlay.style.visibility = 'visible';
 }
-
 function closeModal() {
   modalOverlay.style.opacity = '0';
   modalOverlay.style.pointerEvents = 'none';
   modalOverlay.style.visibility = 'hidden';
 }
+
 
 function validateEmail() {
   const emailValue = emailInput.value.trim();
@@ -48,6 +50,7 @@ function validateEmail() {
     emailError.style.display = 'none';
   }
 }
+
 
 emailInput.addEventListener('blur', validateEmail);
 
@@ -68,6 +71,7 @@ form.addEventListener('submit', async function(event) {
     emailInput.classList.remove('invalid');
     emailError.style.display = 'none';
   }
+
   
 
   try {
@@ -92,6 +96,7 @@ if (error.response) {
     } else {
       openErrModal('An error occurred while setting up the request. Please try again.');
     }
+
   }
 });
 
@@ -103,8 +108,10 @@ modalOverlay.addEventListener('click', function(event) {
   }
 });
 
+
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     closeModal();
   }
 });
+

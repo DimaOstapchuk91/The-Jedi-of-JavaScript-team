@@ -1,0 +1,129 @@
+.faq-title {
+  max-width: 100px;
+  margin-bottom: 32px;
+}
+
+.title-btn-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.faq-accordion-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.faq-accordion-item {
+  max-width: 688px;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  background-color: transparent;
+  padding: 20px 0;
+}
+
+.faq-container li:first-child {
+  border-top: 1px solid rgba(250, 250, 250, 0.2);
+}
+
+.faq-item-title {
+  max-width: 265px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+
+  color: #fafafa;
+}
+
+.faq-container li:nth-child(5) .faq-item-title {
+  max-width: 208px;
+}
+
+.faq-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  background-color: transparent;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+.faq-btn:hover,
+.faq-btn:focus {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.faq-arrow {
+  stroke: #fafafa;
+  transition: transform 0.4s ease;
+}
+
+.faq-text {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  color: #fafafa60;
+}
+.faq-panel {
+  overflow: hidden;
+}
+.faq-accordion-item.is-faq-active .title-btn-box {
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .title-btn-box {
+    align-items: start;
+  }
+  .faq-item-title {
+    max-width: 574px;
+  }
+  .faq-accordion-item {
+    padding: 32px 0;
+  }
+  .faq-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .faq-container li:nth-child(5) .faq-item-title {
+    max-width: 485px;
+  }
+  .faq-container li:last-child .faq-item-title {
+    max-width: 485px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .faq-container li:nth-child(1) {
+    order: 1;
+    border-right: 1px solid rgba(250, 250, 250, 0.2);
+    padding-right: 32px;
+  }
+  .faq-container li:nth-child(2) {
+    order: 3;
+    border-right: 1px solid rgba(250, 250, 250, 0.2);
+    padding-right: 32px;
+  }
+  .faq-container li:nth-child(3) {
+    order: 5;
+    border-right: 1px solid rgba(250, 250, 250, 0.2);
+    padding-right: 32px;
+  }
+  .faq-container li:nth-child(4) {
+    order: 2;
+    border-top: 1px solid rgba(250, 250, 250, 0.2);
+    padding-left: 32px;
+  }
+  .faq-container li:nth-child(5) {
+    order: 4;
+    padding-left: 32px;
+  }
+  .faq-container li:nth-child(6) {
+    order: 6;
+    padding-left: 32px;
+  }
+}

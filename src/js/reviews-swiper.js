@@ -1,20 +1,7 @@
-import { Swiper, Navigation, Pagination, axios } from './libs';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-
-// TODO
-// 1. create layout for section and Swiper
-// 2. get refs for Elements
-// 3. on page load add event listner and fetch data https://portfolio-js.b.goit.study/api/reviews
-// 4. if error returns
-//     4.1 show with izitoast notification(left bottom side)
-//     4.2  add mockup text(some default size for it should be)
-// 5. create markup function
-// 6. add swiper logic - need to think about buttons (if no items - disable next button)
-// 7. add stiles mobile first
+import { Swiper, Navigation, Keyboard, axios, iziToast } from './libs';
 
 const refs = {
-  swiper: document.querySelector('.swiper'),
+  swiper: document.querySelector('.reviews-container'),
   swiperNext: document.querySelector('.review-button-next'),
   swiperPrev: document.querySelector('.review-button-prev'),
   reviewsList: document.querySelector('.reviews-list'),
@@ -25,17 +12,21 @@ document.addEventListener('DOMContentLoaded', renderReviews);
 const swiperForReviews = new Swiper(refs.swiper, {
   grabCursor: true,
   direction: 'horizontal',
+
   autoplay: {
-    delay: 500,
+    delay: 1000,
     disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
+
   slidesPerView: 1,
+  spaceBetween: 16,
 
   breakpoints: {
     768: {
       slidesPerView: 2,
     },
-    1140: {
+    1440: {
       slidesPerView: 4,
       keyboard: {
         enabled: true,
@@ -44,11 +35,15 @@ const swiperForReviews = new Swiper(refs.swiper, {
     },
   },
 
-  modules: [Navigation],
+  modules: [Navigation, Keyboard],
 
   navigation: {
     nextEl: refs.swiperNext,
     prevEl: refs.swiperPrev,
+  },
+
+  keyboard: {
+    enabled: true,
   },
 });
 
@@ -69,9 +64,9 @@ async function renderReviews() {
           avatar_url,
           review,
         }) => `          <li class="reviews-list-item swiper-slide">
-              <img class="reviws-avatar"  loading="lazy" src="${avatar_url}" alt="reviewer avatar" />
-              <p>${author}</p>
-              <p>${review}</p>
+              <img class="reviewers-avatar"  loading="lazy" src="${avatar_url}" alt="reviewer avatar" name="reviewers-avatar"/>
+              <p class="reviewers-name">${author}</p>
+              <p class="reviws-text">${review}</p>
           </li>`
       )
       .join('');
