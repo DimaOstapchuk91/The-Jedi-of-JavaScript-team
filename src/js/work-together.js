@@ -3,6 +3,8 @@ import { axios } from './libs';
 const form = document.getElementById('work-form');
 const emailInput = document.getElementById('email-input');
 const emailError = document.getElementById('email-error');
+const emailSuccess = document.getElementById('email-success');
+const commentInput = document.getElementById('comments-input');
 const modalOverlay = document.querySelector('.work-modal-overlay');
 const modalMessage = document.querySelector('.work-modal-info');
 const modalTitle = document.querySelector('.work-modal-title');
@@ -38,53 +40,81 @@ function validateEmail() {
     emailInput.classList.remove('invalid');
     emailInput.classList.remove('valid');
     emailError.style.display = 'none';
+    emailSuccess.style.display = 'none'; 
   } else if (!emailValue.match(emailRegex)) {
     emailInput.classList.add('invalid');
     emailInput.classList.remove('valid');
     emailError.style.display = 'block';
+    emailSuccess.style.display = 'none'; 
   } else {
     emailInput.classList.remove('invalid');
     emailInput.classList.add('valid');
     emailError.style.display = 'none';
+    emailSuccess.style.display = 'block'; 
   }
 }
 
-emailInput.addEventListener('input', event => { validateEmail(); } );
+function validateComment() {
+  const commentValue = commentInput.value.trim();
+  
+  if (commentValue === '') {
+    commentInput.classList.remove('valid');
+    commentInput.classList.remove('invalid');
+  } else if (commentValue.length >= 4) {
+    commentInput.classList.add('valid');
+    commentInput.classList.remove('invalid');
+  } else {
+    commentInput.classList.add('invalid');
+    commentInput.classList.remove('valid');
+  }
+}
+
+emailInput.addEventListener('input', validateEmail);
+commentInput.addEventListener('input', validateComment);
 
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
   const formData = new FormData(form);
   const emailValue = formData.get('email') ? formData.get('email').trim() : '';
-  const comment = formData.get('comments') ? formData.get('comments').trim() : '';
+  const commentValue = formData.get('comments') ? formData.get('comments').trim() : '';
 
-  if (!emailValue || !comment) {
+  if (!emailValue || !commentValue || commentValue.length < 4) {
     if (!emailValue.match(emailRegex)) {
       emailInput.classList.add('invalid');
       emailError.style.display = 'block';
+      emailSuccess.style.display = 'none'; 
     } else {
       emailInput.classList.remove('invalid');
       emailError.style.display = 'none';
+      emailSuccess.style.display = 'block';
     }
-    openErrModal('Please fill in both fields.');
+
+    if (commentValue.length < 4) {
+      commentInput.classList.add('invalid');
+    }
+
+    openErrModal('Please fill in both fields correctly.');
     return;
   }
 
   if (emailValue.match(emailRegex)) {
     emailInput.classList.remove('invalid');
     emailError.style.display = 'none';
+    emailSuccess.style.display = 'block'; 
   }
 
   try {
     const response = await axios.post('https://portfolio-js.b.goit.study/api/requests', {
       email: emailValue,
-      comment: comment,
+      comment: commentValue,
     });
 
     if (response.status === 201) {
       openModal('The manager will contact you shortly to discuss further details and opportunities for cooperation. Please stay in touch.');
       form.reset();
-      validateEmail();
+      validateEmail(); 
+      validateComment();
     } else {
       openErrModal(`Error: ${response.data.message || 'Unknown error occurred.'}`);
     }
@@ -101,13 +131,13 @@ form.addEventListener('submit', async function(event) {
 
 closeModalBtn.addEventListener('click', closeModal);
 
-modalOverlay.addEventListener('click', function (event) {
+modalOverlay.addEventListener('click', function(event) {
   if (event.target === modalOverlay) {
     closeModal();
   }
 });
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     closeModal();
   }
