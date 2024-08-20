@@ -1,23 +1,69 @@
-import { Swiper, Navigation, Pagination, Accordion } from './libs';
+import { Swiper, Navigation, Keyboard, Pagination, Accordion } from './libs';
+
 new Accordion('.accordion-container', {
   ariaEnabled: true,
   duration: 400,
   collapse: true,
-  elementClass: 'acc',
-  triggerClass: 'ac-trigger',
-  panelClass: 'ac-panel',
-  activeClass: 'is-active',
+  elementClass: 'acc-about-item',
+  triggerClass: 'ac-about-trigger',
+  panelClass: 'ac-about-panel',
+  activeClass: 'is-about-active',
   openOnInit: [0],
-  beforeOpen: currElement => {
-    console.log('Before opening:', currElement);
+
+  onOpen: currAboutElement => {
+    const icon = currAboutElement.querySelector('.acc-about-icon');
+    if (icon) {
+      icon.style.transform = 'rotate(180deg)';
+    }
   },
-  onOpen: currElement => {
-    console.log('Opened:', currElement);
+
+  onClose: currAboutElement => {
+    const icon = currAboutElement.querySelector('.acc-about-icon');
+    if (icon) {
+      icon.style.transform = 'rotate(0deg)';
+    }
   },
-  beforeClose: currElement => {
-    console.log('Before closing:', currElement);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const firstElement = document.querySelector(
+    '.accordion-container .acc-about-item'
+  );
+  if (firstElement && firstElement.classList.contains('is-about-active')) {
+    const icon = firstElement.querySelector('.acc-about-icon');
+    if (icon) {
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+});
+
+new Swiper('.about-container', {
+  grabCursor: true,
+  direction: 'horizontal',
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
-  onClose: currElement => {
-    console.log('Closed:', currElement);
+
+  slidesPerView: 2,
+  spaceBetween: 0,
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+    },
+    1440: {
+      slidesPerView: 6,
+    },
+  },
+
+  modules: [Navigation, Keyboard],
+  navigation: {
+    nextEl: '.about-skill-icon',
+  },
+
+  keyboard: {
+    enabled: true,
   },
 });
