@@ -70,10 +70,10 @@ button.review-button-next {
   transition: box-shadow 200ms linear;
 }
 
-button.review-button-prev:hover,
-button.review-button-next:hover,
-button.review-button-prev:focus,
-button.review-button-next:focus {
+button.review-button-prev:not(:disabled):hover,
+button.review-button-next:not(:disabled):hover,
+button.review-button-prev:not(:disabled):hover,
+button.review-button-next:not(:disabled):hover {
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
