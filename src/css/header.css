@@ -60,6 +60,7 @@
   }
 
   .dropdown-toggle {
+    padding: 10px;
     border: none;
     background-color: transparent;
     font-family: inherit;
@@ -74,8 +75,8 @@
   .dropdown-toggle::after {
     content: '';
     position: absolute;
-    left: 6px;
-    bottom: -1px;
+    left: 10px;
+    bottom: 6px;
     width: 40px;
     height: 2px;
     background-color: #fafafa;

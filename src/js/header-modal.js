@@ -13,7 +13,7 @@ menuLink.forEach(link => {
 });
 
 window.addEventListener('click', function (e) {
-  if (!document.querySelector('.dropdown').contains(e.target)) {
+  if (!document.querySelector('.hero-dropdown').contains(e.target)) {
     menuDropdown.classList.remove('show');
   }
 });
