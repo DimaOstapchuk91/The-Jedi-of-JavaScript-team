@@ -1,6 +1,6 @@
 <header id="header" class="header">
   <div class="header-box">
-    <div class="header-wrap container">
+    <div class="header-wrap">
       <div class="header-logo">
         <a href="./index.html">
           <img
@@ -11,6 +11,7 @@
             "
             src="/img/header-img/lloyd-portret@1x.webp"
             alt="Lloyd Jefferson"
+            loading="lazy"
             width="80"
             height="80"
           />
@@ -18,33 +19,56 @@
 
         <a href="./index.html" class="header-logo-text">jefferson&#42;</a>
       </div>
-      <div class="dropdown">
-        <button class="js-dropdown-toggle dropdown-toggle" type="button">
+      <div class="hero-dropdown">
+        <button
+          class="js-dropdown-toggle dropdown-toggle"
+          aria-label="drop-menu-btn"
+          type="button"
+        >
           Menu
         </button>
         <ul class="js-dropdown-menu dropdown-menu">
           <li>
-            <a class="js-header-menu-link header-menu-link" href="#"
+            <a
+              class="js-header-menu-link header-menu-link"
+              href="#about-me-section"
+              aria-label="about-me-section-link"
               >About me</a
             >
           </li>
           <li>
-            <a class="js-header-menu-link header-menu-link" href="#"
+            <a
+              class="js-header-menu-link header-menu-link"
+              href="#benefits-section"
+              aria-label="benefits-section-link"
               >Benefits</a
             >
           </li>
           <li>
-            <a class="js-header-menu-link header-menu-link" href="#"
+            <a
+              class="js-header-menu-link header-menu-link"
+              href="#projects-section"
+              aria-label="projects-section-link"
               >Projects</a
             >
           </li>
           <li>
-            <a class="js-header-menu-link header-menu-link" href="#">FAQ</a>
+            <a
+              class="js-header-menu-link header-menu-link"
+              href="#faq-section"
+              aria-label="faq-section-link"
+              >FAQ</a
+            >
           </li>
         </ul>
       </div>
       <div>
-        <a href="#" class="header-order-btn">Order the project</a>
+        <a
+          href="#work-together"
+          aria-label="work-together-link"
+          class="header-order-btn"
+          >Order the project</a
+        >
       </div>
       <button
         class="header-btn js-open-menu"
