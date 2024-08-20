@@ -5,6 +5,7 @@ const emailInput = document.getElementById('email-input');
 const emailError = document.getElementById('email-error');
 const emailSuccess = document.getElementById('email-success');
 const commentInput = document.getElementById('comments-input');
+const commentWarning = document.getElementById('comments-warning');
 const modalOverlay = document.querySelector('.work-modal-overlay');
 const modalMessage = document.querySelector('.work-modal-info');
 const modalTitle = document.querySelector('.work-modal-title');
@@ -56,16 +57,19 @@ function validateEmail() {
 
 function validateComment() {
   const commentValue = commentInput.value.trim();
-  
+
   if (commentValue === '') {
     commentInput.classList.remove('valid');
     commentInput.classList.remove('invalid');
+    commentWarning.style.display = 'none';
   } else if (commentValue.length >= 4) {
     commentInput.classList.add('valid');
     commentInput.classList.remove('invalid');
+    commentWarning.style.display = 'none';
   } else {
     commentInput.classList.add('invalid');
     commentInput.classList.remove('valid');
+    commentWarning.style.display = 'block';
   }
 }
 
@@ -92,6 +96,10 @@ form.addEventListener('submit', async function(event) {
 
     if (commentValue.length < 4) {
       commentInput.classList.add('invalid');
+      commentWarning.style.display = 'block';
+    } else {
+      commentInput.classList.remove('invalid');
+      commentWarning.style.display = 'none';
     }
 
     openErrModal('Please fill in both fields correctly.');
@@ -142,4 +150,3 @@ document.addEventListener('keydown', function(event) {
     closeModal();
   }
 });
-
