@@ -59,7 +59,8 @@
 
 .faq-arrow {
   stroke: #fafafa;
-  transition: transform 0.4s ease;
+  fill: transperen;
+  transition: transform 0.3s ease;
 }
 
 .faq-text {
