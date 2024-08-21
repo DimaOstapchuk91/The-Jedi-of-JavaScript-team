@@ -45,6 +45,7 @@
     display: flex;
     justify-content: center;
     margin: 0;
+  
 }
 
 .hero-link {
@@ -52,6 +53,7 @@
     border-radius: 60px;
     width: 36px;
     height: 36px;
+    padding: 7px;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.28px;
@@ -62,6 +64,10 @@
     justify-content: center;
     transition: box-shadow 0.3s ease, background 0.3s ease;
 }
+
+/* .social-list-item{
+
+} */
 
 .hero-link.hero-em {
     padding: 10px 12px;
@@ -77,6 +83,106 @@
     height: 20px;
     fill: #fafafa;
   }
+
+  .hero-link.hero-ig:hover {
+    background: linear-gradient(45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888);
+  }
+
+  .hero-link.hero-fb:hover {
+    background: linear-gradient(45deg, #1877f2, #1351b4);
+  }
+
+  .hero-link.hero-yt:hover {
+    background: linear-gradient(45deg, #ff0000, #c70039);
+  }
+
+  .hero-link.hero-gh:hover {
+    background: linear-gradient(45deg, #333333, #0d1117);
+  }
+
+
+ .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+   .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+
+  .hero-link.hero-fb .tooltip::before{
+    background: linear-gradient(45deg, #1877f2, #1351b4);
+  }
+
+  .hero-link.hero-ig .tooltip::before {
+    background: linear-gradient(45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888);
+  }
+  .hero-link.hero-yt .tooltip::before {
+    background: linear-gradient(45deg, #ff0000, #c70039);
+  }
+  .hero-link.hero-gh .tooltip::before {
+    background: linear-gradient(45deg, #333333, #0d1117);
+  }
+
+  .hero-link:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    color: #fafafa;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .hero-link.hero-fb:hover .tooltip{
+    background: linear-gradient(45deg, #1877f2, #1351b4);
+  }
+  .hero-link.hero-ig:hover .tooltip{
+    background: linear-gradient(45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888);
+  }
+  .hero-link.hero-yt:hover .tooltip{
+ 
+    background: linear-gradient(45deg, #ff0000, #c70039);
+  }
+  .hero-link.hero-gh:hover .tooltip{
+  
+    background: linear-gradient(45deg, #333333, #0d1117);
+  }
+
+
+
+
+
 
 @media screen and (min-width: 768px) {
     .hero-container {
