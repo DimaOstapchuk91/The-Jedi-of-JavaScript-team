@@ -1,3 +1,8 @@
+.about-section {
+  padding-top: 64px;
+  padding-bottom: 32px;
+}
+
 .about-me-description {
   padding: 32px 32px 272px 32px;
   text-transform: uppercase;
@@ -82,6 +87,14 @@
 .acc-about-icon {
   stroke: #fff;
   fill: transparent;
+}
+
+.ac-about-panel {
+  display: flex;
+  flex-direction: column;
+}
+.ac-about-empty {
+  display: none;
 }
 
 .acc-about-item .ac-about-panel {
@@ -172,10 +185,18 @@ button.about-button-next {
 }
 
 @media screen and (min-width: 768px) {
+  .about-section {
+    padding-bottom: 48px;
+  }
+
   .about-me-description {
     padding: 64px 64px 436px 64px;
     font-size: 38px;
     line-height: 1.05;
+  }
+
+  .about-me-image {
+    margin-bottom: 64px;
   }
 
   .about-slides-wrap {
@@ -187,10 +208,6 @@ button.about-button-next {
   .about-container.swiper.swiper-initialized {
     width: 600px;
     height: 200px;
-  }
-
-  .acc-about-item .ac-about-panel .ac-about-text {
-    padding-bottom: 64px;
   }
 
   button.about-button-next {
@@ -205,9 +222,23 @@ button.about-button-next {
 }
 
 @media screen and (min-width: 1440px) {
+  .about-me-description {
+    margin-bottom: 0;
+  }
+
+  .about-section {
+    padding-top: 96px;
+    padding-bottom: 82px;
+  }
+
+  .about-me-image {
+    margin-bottom: 0;
+  }
+
   .about-me-wrap {
     display: flex;
     gap: 16px;
+    padding-bottom: 96px;
   }
 
   .about-me-description {
@@ -216,8 +247,23 @@ button.about-button-next {
     height: 700px;
   }
 
-  .acc-about-item {
-    padding-bottom: 96px;
+  .ac-about-panel {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .ac-about-empty {
+    display: block;
+    flex: 1;
+  }
+
+  .ac-about-text-wrap {
+    flex: 1;
+    padding-right: 68px;
+  }
+
+  .ac-about-text {
+    text-align: left;
   }
 
   .about-slides-wrap {
