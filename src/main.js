@@ -5,3 +5,4 @@ import './js/faq-accordion.js';
 import './js/covers.js';
 import './js/reviews-swiper.js';
 import './js/work-together.js';
+import './js/scroll-up.js';
