@@ -1,9 +1,8 @@
 import { Swiper, Navigation, Keyboard, Pagination, Accordion } from './libs';
 
 new Accordion('.accordion-container', {
-  ariaEnabled: true,
   duration: 400,
-  collapse: true,
+  showMultiple: true,
   elementClass: 'acc-about-item',
   triggerClass: 'ac-about-trigger',
   panelClass: 'ac-about-panel',
@@ -41,11 +40,7 @@ new Swiper('.about-container', {
   grabCursor: true,
   direction: 'horizontal',
   loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
+  speed: 400,
 
   slidesPerView: 2,
   spaceBetween: 0,
