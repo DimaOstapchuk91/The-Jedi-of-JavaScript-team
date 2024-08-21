@@ -102,10 +102,6 @@
     border-bottom: 2px solid green;
 }
 
-.work-input[type="email"].valid {
-    border-bottom: 2px solid green;
-}
-
 .work-input.invalid + .error-message{
     display: block;
 }
@@ -114,7 +110,7 @@
     display: none;
     color: red;
     font-size: 14px;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 .work-btn {
@@ -268,10 +264,12 @@ padding-bottom: 169px;
     flex-direction: row;
     align-items: center;
     gap: 32px;
+
 }
 
 .work-input-container{
     flex-grow: 1;
+    min-height: 75px;
 }
 
 .work-input {
@@ -288,6 +286,13 @@ padding-bottom: 169px;
 .error-message {
     order: 2;
     margin-top: 4px;
+    min-height: 18px;
+}
+
+.success-message{
+    order: 2;
+    margin-top: 4px;
+    min-height: 18px;
 }
 
 .work-btn {
