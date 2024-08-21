@@ -262,14 +262,12 @@ padding-bottom: 169px;
     font-size: 64px;
     line-height: 64px;
     letter-spacing: -1.92px;
-    margin-bottom: 64px;
 }
 
 .work-form {
     flex-direction: row;
     align-items: flex-start;
     gap: 32px;
-    margin-bottom: 78px;
 }
 
 .work-input-container{
@@ -309,24 +307,13 @@ padding-bottom: 169px;
 }
 
 .work-modal {
-    /* padding-left: 64px; */
     max-width: 492px;
-    
+}
 
 }
 
 .modal-close-btn {
     margin-left: 384px;
-}
-
-.work-modal-title {
-    margin-right: 44px;
-}
-
-.work-modal-info {
-    margin-right: 44px;
-}
-
 }
 
 @media screen and (min-width: 1440px) {
