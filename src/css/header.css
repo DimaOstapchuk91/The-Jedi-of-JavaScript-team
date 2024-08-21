@@ -39,6 +39,43 @@
   stroke: #fafafa;
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #ed3b44;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
+.scroll-to-top.up-btn-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scrol-to-up-img {
+  transform: rotate(90deg);
+  fill: transparent;
+  stroke: #fafafa;
+}
+
+.scroll-to-top:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  background-color: #e0373f;
+}
+
 .no-scroll {
   overflow: hidden;
 }
