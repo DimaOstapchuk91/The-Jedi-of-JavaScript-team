@@ -2,12 +2,15 @@
   margin-bottom: 32px;
 }
 
+.reviews-list.swiper-wrapper {
+  margin-bottom: 32px;
+}
+
 .reviews-list-item.swiper-slide {
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 20px;
   padding: 32px 24px;
   height: 384px;
-  margin-bottom: 32px;
 }
 
 .error-mock {
