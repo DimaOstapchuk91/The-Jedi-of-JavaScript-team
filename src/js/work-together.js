@@ -19,6 +19,7 @@ function openModal(message) {
   modalOverlay.style.opacity = '1';
   modalOverlay.style.pointerEvents = 'auto';
   modalOverlay.style.visibility = 'visible';
+  document.body.classList.add('no-scroll-work');
 }
 
 function openErrModal(message) {
@@ -27,12 +28,14 @@ function openErrModal(message) {
   modalOverlay.style.opacity = '1';
   modalOverlay.style.pointerEvents = 'auto';
   modalOverlay.style.visibility = 'visible';
+  document.body.classList.add('no-scroll-work');
 }
 
 function closeModal() {
   modalOverlay.style.opacity = '0';
   modalOverlay.style.pointerEvents = 'none';
   modalOverlay.style.visibility = 'hidden';
+  document.body.classList.remove('no-scroll-work');
 }
 
 function validateEmail() {
