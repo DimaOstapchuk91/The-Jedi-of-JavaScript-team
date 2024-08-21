@@ -266,7 +266,7 @@ padding-bottom: 169px;
 
 .work-form {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 32px;
 }
 
