@@ -1,96 +1,280 @@
-.hero-section {}
+.hero-section {
+}
 
 .hero-container {
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-    height: 812px;
-    max-width: 375px;
-    position: relative;
-    overflow: hidden;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 812px;
+  max-width: 375px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-bg {
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    width: 578px;
-    height: 812px;
-    background: linear-gradient(232deg,
-            #1c1d20 49.69%,
-            #69292d 67.71%,
-            #ed3b44 99.91%);
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 578px;
+  height: 812px;
+  background: linear-gradient(
+    232deg,
+    #1c1d20 49.69%,
+    #69292d 67.71%,
+    #ed3b44 99.91%
+  );
 }
 
 .hero-text {
-    font-family: 'Inter Tight', sans-serif;
-    font-weight: 500;
-    font-size: 50px;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: #fafafa;
-    margin-left: 16px;
-    z-index: 2;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fafafa;
+  margin-left: 16px;
+  z-index: 2;
 }
 
 .social-links {
-    position: absolute;
-    bottom: 32px;
-    right: 16px;
-    flex-wrap: wrap;
-    gap: 4px;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-  
+  position: absolute;
+  bottom: 32px;
+  right: 16px;
+  flex-wrap: wrap;
+  gap: 4px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
 .hero-link {
-    border: 1px solid rgba(250, 250, 250, 0.2);
-    border-radius: 60px;
-    width: 36px;
-    height: 36px;
-    padding: 7px;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.28px;
-    color: #fafafa;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 60px;
+  width: 36px;
+  height: 36px;
+  padding: 7px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  color: #fafafa;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
-/* .social-list-item{
-
-} */
-
 .hero-link.hero-em {
-    padding: 10px 12px;
-    font-size: 14px;
-    width: 178px;
+  padding: 10px 12px;
+  font-size: 14px;
+  width: 178px;
 }
 
 .hero-link:hover {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .svg-icon {
-    height: 20px;
-    fill: #fafafa;
+  height: 20px;
+  fill: #fafafa;
+}
+
+.hero-link.hero-ig:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+
+.hero-link.hero-fb:hover {
+  background: linear-gradient(45deg, #1877f2, #1351b4);
+}
+
+.hero-link.hero-yt:hover {
+  background: linear-gradient(45deg, #ff0000, #c70039);
+}
+
+.hero-link.hero-gh:hover {
+  background: linear-gradient(45deg, #333333, #0d1117);
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip::before {
+  position: absolute;
+  content: '';
+  height: 8px;
+  width: 8px;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hero-link.hero-fb .tooltip::before {
+  background: linear-gradient(45deg, #1877f2, #1351b4);
+}
+
+.hero-link.hero-ig .tooltip::before {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+.hero-link.hero-yt .tooltip::before {
+  background: linear-gradient(45deg, #ff0000, #c70039);
+}
+.hero-link.hero-gh .tooltip::before {
+  background: linear-gradient(45deg, #333333, #0d1117);
+}
+
+.hero-link:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  color: #fafafa;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.hero-link.hero-fb:hover .tooltip {
+  background: linear-gradient(45deg, #1877f2, #1351b4);
+}
+.hero-link.hero-ig:hover .tooltip {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+.hero-link.hero-yt:hover .tooltip {
+  background: linear-gradient(45deg, #ff0000, #c70039);
+}
+.hero-link.hero-gh:hover .tooltip {
+  background: linear-gradient(45deg, #333333, #0d1117);
+}
+
+@media screen and (min-width: 768px) {
+  .hero-container {
+    max-width: 768px;
+  }
+
+  .hero-text {
+    font-size: 90px;
+    margin-left: 32px;
+  }
+
+  .social-links {
+    right: 32px;
+    bottom: 32px;
+    left: auto;
+    position: absolute;
+    margin: 0;
+    display: flex;
+    gap: 8px;
+  }
+
+  .hero-link {
+    width: 54px;
+    height: 54px;
+    padding: 16px;
+  }
+
+  .hero-link.hero-em {
+    padding: 18px 24px;
+    font-size: 16px;
+    width: 224px;
+  }
+  .hero-text-an1,
+  .hero-text-an2,
+  .hero-text-an3 {
+    display: block;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  .hero-text-an1 {
+    animation: slideIn1 1s ease forwards;
+  }
+
+  .hero-text-an2 {
+    animation: slideIn2 1.5s ease forwards;
+  }
+
+  .hero-text-an3 {
+    animation: slideIn3 2s ease forwards;
+  }
+
+  @keyframes slideIn1 {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideIn2 {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideIn3 {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero-container {
+    max-width: 1440px;
+  }
+
+  .hero-bg {
+    width: 728px;
+    height: 900px;
+  }
+
+  .hero-text {
+    font-size: 90px;
   }
 
   .hero-link.hero-ig:hover {
-    background: linear-gradient(45deg,
-        #f09433,
-        #e6683c,
-        #dc2743,
-        #cc2366,
-        #bc1888);
+    background: linear-gradient(
+      45deg,
+      #f09433,
+      #e6683c,
+      #dc2743,
+      #cc2366,
+      #bc1888
+    );
   }
 
   .hero-link.hero-fb:hover {
@@ -105,8 +289,7 @@
     background: linear-gradient(45deg, #333333, #0d1117);
   }
 
-
- .tooltip {
+  .tooltip {
     position: absolute;
     top: 0;
     font-size: 14px;
@@ -119,10 +302,10 @@
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  
-   .tooltip::before {
+
+  .tooltip::before {
     position: absolute;
-    content: "";
+    content: '';
     height: 8px;
     width: 8px;
     bottom: -3px;
@@ -131,18 +314,19 @@
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-
-  .hero-link.hero-fb .tooltip::before{
+  .hero-link.hero-fb .tooltip::before {
     background: linear-gradient(45deg, #1877f2, #1351b4);
   }
 
   .hero-link.hero-ig .tooltip::before {
-    background: linear-gradient(45deg,
-        #f09433,
-        #e6683c,
-        #dc2743,
-        #cc2366,
-        #bc1888);
+    background: linear-gradient(
+      45deg,
+      #f09433,
+      #e6683c,
+      #dc2743,
+      #cc2366,
+      #bc1888
+    );
   }
   .hero-link.hero-yt .tooltip::before {
     background: linear-gradient(45deg, #ff0000, #c70039);
@@ -159,173 +343,23 @@
     pointer-events: auto;
   }
 
-  .hero-link.hero-fb:hover .tooltip{
+  .hero-link.hero-fb:hover .tooltip {
     background: linear-gradient(45deg, #1877f2, #1351b4);
   }
-  .hero-link.hero-ig:hover .tooltip{
-    background: linear-gradient(45deg,
-        #f09433,
-        #e6683c,
-        #dc2743,
-        #cc2366,
-        #bc1888);
+  .hero-link.hero-ig:hover .tooltip {
+    background: linear-gradient(
+      45deg,
+      #f09433,
+      #e6683c,
+      #dc2743,
+      #cc2366,
+      #bc1888
+    );
   }
-  .hero-link.hero-yt:hover .tooltip{
- 
+  .hero-link.hero-yt:hover .tooltip {
     background: linear-gradient(45deg, #ff0000, #c70039);
   }
-  .hero-link.hero-gh:hover .tooltip{
-  
+  .hero-link.hero-gh:hover .tooltip {
     background: linear-gradient(45deg, #333333, #0d1117);
   }
-
-
-
-
-
-
-@media screen and (min-width: 768px) {
-    .hero-container {
-        max-width: 768px;
-    }
-
-    .hero-text {
-        font-size: 90px;
-        margin-left: 32px;
-    }
-
-    .social-links {
-        right: 32px;
-        bottom: 32px;
-        left: auto;
-        position: absolute;
-        margin: 0;
-        display: flex;
-        gap: 8px;
-    }
-
-    .hero-link {
-        width: 54px;
-        height: 54px;
-        padding: 16px;
-    }
-
-    .hero-link.hero-em {
-        padding: 18px 24px;
-        font-size: 16px;
-        width: 224px;
-    }
-
-   
-}
-
-@media screen and (min-width: 1440px) {
-    .hero-container {
-        max-width: 1440px;
-    }
-
-    .hero-bg {
-        width: 728px;
-        height: 900px;
-    }
-
-    .hero-text {
-        font-size: 90px;
-    }
-
-    .hero-link.hero-ig:hover {
-        background: linear-gradient(45deg,
-            #f09433,
-            #e6683c,
-            #dc2743,
-            #cc2366,
-            #bc1888);
-      }
-    
-      .hero-link.hero-fb:hover {
-        background: linear-gradient(45deg, #1877f2, #1351b4);
-      }
-    
-      .hero-link.hero-yt:hover {
-        background: linear-gradient(45deg, #ff0000, #c70039);
-      }
-    
-      .hero-link.hero-gh:hover {
-        background: linear-gradient(45deg, #333333, #0d1117);
-      }
-    
-    
-     .tooltip {
-        position: absolute;
-        top: 0;
-        font-size: 14px;
-        background: #ffffff;
-        color: #ffffff;
-        padding: 5px 8px;
-        border-radius: 5px;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      }
-      
-       .tooltip::before {
-        position: absolute;
-        content: "";
-        height: 8px;
-        width: 8px;
-        bottom: -3px;
-        left: 50%;
-        transform: translate(-50%) rotate(45deg);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      }
-    
-    
-      .hero-link.hero-fb .tooltip::before{
-        background: linear-gradient(45deg, #1877f2, #1351b4);
-      }
-    
-      .hero-link.hero-ig .tooltip::before {
-        background: linear-gradient(45deg,
-            #f09433,
-            #e6683c,
-            #dc2743,
-            #cc2366,
-            #bc1888);
-      }
-      .hero-link.hero-yt .tooltip::before {
-        background: linear-gradient(45deg, #ff0000, #c70039);
-      }
-      .hero-link.hero-gh .tooltip::before {
-        background: linear-gradient(45deg, #333333, #0d1117);
-      }
-    
-      .hero-link:hover .tooltip {
-        top: -45px;
-        opacity: 1;
-        color: #fafafa;
-        visibility: visible;
-        pointer-events: auto;
-      }
-    
-      .hero-link.hero-fb:hover .tooltip{
-        background: linear-gradient(45deg, #1877f2, #1351b4);
-      }
-      .hero-link.hero-ig:hover .tooltip{
-        background: linear-gradient(45deg,
-            #f09433,
-            #e6683c,
-            #dc2743,
-            #cc2366,
-            #bc1888);
-      }
-      .hero-link.hero-yt:hover .tooltip{
-     
-        background: linear-gradient(45deg, #ff0000, #c70039);
-      }
-      .hero-link.hero-gh:hover .tooltip{
-      
-        background: linear-gradient(45deg, #333333, #0d1117);
-      }
-   
 }
