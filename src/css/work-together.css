@@ -321,9 +321,13 @@ padding-bottom: 169px;
 .footer {
     padding: 82px 0;
 }
+
+.work-container{
+    padding-left: 164px;
+}
     
 .work-bg-image {
-    left: 850px;
+    left: 1010px;
     max-height: 748px;
 }
 
