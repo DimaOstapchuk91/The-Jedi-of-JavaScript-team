@@ -97,12 +97,12 @@ function validateComment() {
 
 emailInput.addEventListener('input', function () {
   validateEmail();
-  localStorage.setItem('email', emailInput.value.trim()); 
+  localStorage.setItem('email', emailInput.value.trim());
 });
 
 commentInput.addEventListener('input', function () {
   validateComment();
-  localStorage.setItem('comment', commentInput.value.trim()); 
+  localStorage.setItem('comment', commentInput.value.trim());
 });
 
 form.addEventListener('submit', async function(event) {
@@ -149,10 +149,14 @@ form.addEventListener('submit', async function(event) {
 
     if (response.status === 201) {
       openModal('The manager will contact you shortly to discuss further details and opportunities for cooperation. Please stay in touch.');
+      
       form.reset();
+      
+      localStorage.removeItem('email');
+      localStorage.removeItem('comment');
+      
       validateEmail(); 
       validateComment();
-
     } else {
       openErrModal(`Error: ${response.data.message || 'Unknown error occurred.'}`);
     }
