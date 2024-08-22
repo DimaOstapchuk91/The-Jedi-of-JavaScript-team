@@ -13,6 +13,21 @@ const closeModalBtn = document.querySelector('.modal-close-btn');
 
 const emailRegex = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
+document.addEventListener('DOMContentLoaded', function () {
+  const savedEmail = localStorage.getItem('email');
+  const savedComment = localStorage.getItem('comment');
+  
+  if (savedEmail) {
+    emailInput.value = savedEmail;
+    validateEmail();
+  }
+  
+  if (savedComment) {
+    commentInput.value = savedComment;
+    validateComment(); 
+  }
+});
+
 function openModal(message) {
   modalMessage.textContent = message;
   modalTitle.textContent = 'Thank you for your interest in cooperation!';
@@ -55,6 +70,8 @@ function validateEmail() {
     emailInput.classList.add('valid');
     emailError.style.display = 'none';
     emailSuccess.style.display = 'block'; 
+
+    localStorage.setItem('email', emailValue);
   }
 }
 
@@ -69,6 +86,8 @@ function validateComment() {
     commentInput.classList.add('valid');
     commentInput.classList.remove('invalid');
     commentWarning.style.display = 'none';
+
+    localStorage.setItem('comment', commentValue);
   } else {
     commentInput.classList.add('invalid');
     commentInput.classList.remove('valid');
@@ -76,8 +95,15 @@ function validateComment() {
   }
 }
 
-emailInput.addEventListener('input', validateEmail);
-commentInput.addEventListener('input', validateComment);
+emailInput.addEventListener('input', function () {
+  validateEmail();
+  localStorage.setItem('email', emailInput.value.trim()); 
+});
+
+commentInput.addEventListener('input', function () {
+  validateComment();
+  localStorage.setItem('comment', commentInput.value.trim()); 
+});
 
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
@@ -126,6 +152,7 @@ form.addEventListener('submit', async function(event) {
       form.reset();
       validateEmail(); 
       validateComment();
+
     } else {
       openErrModal(`Error: ${response.data.message || 'Unknown error occurred.'}`);
     }
