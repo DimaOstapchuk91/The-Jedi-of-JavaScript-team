@@ -34,6 +34,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 12px;
+  cursor: pointer;
 }
 
 .acc-about-item {
@@ -68,6 +69,11 @@
   margin: 0;
   border: 1px solid rgba(250, 250, 250, 0.2);
   transition: box-shadow 0.3s ease;
+}
+
+.ac-about-header-wrap:hover .about-btn-trigger {
+  color: #8a8a8a;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .about-btn-trigger:hover,
