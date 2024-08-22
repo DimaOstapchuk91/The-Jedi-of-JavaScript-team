@@ -134,15 +134,18 @@
 .about-slides-wrap {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: row;
-  gap: 55px;
-  width: 343px;
+  max-width: 343px;
   height: 130px;
 }
 
+div.about-container {
+  margin: 0;
+}
+
 .about-container.swiper.swiper-initialized {
-  width: 260px;
+  max-width: 260px;
   height: 130px;
   display: flex;
   align-items: flex-start;
@@ -207,13 +210,13 @@ button.about-button-next {
   }
 
   .about-slides-wrap {
-    width: 704px;
+    max-width: 704px;
     height: 200px;
     gap: 64px;
   }
 
   .about-container.swiper.swiper-initialized {
-    width: 600px;
+    max-width: 600px;
     height: 200px;
   }
 
@@ -269,26 +272,27 @@ button.about-button-next {
 
   .ac-about-empty {
     display: block;
-    flex: 1;
+    width: calc(100% / 2);
   }
 
   .ac-about-text-wrap {
-    flex: 1;
-    padding-right: 68px;
+    width: calc(100% / 2);
   }
 
   .ac-about-text {
     text-align: left;
+    margin-left: 8px;
+    max-width: 606px;
   }
 
   .about-slides-wrap {
-    width: 1312px;
+    max-width: 1312px;
     gap: 72px;
     margin: 0 auto;
   }
 
   .about-container.swiper.swiper-initialized {
-    width: 1200px;
+    max-width: 1200px;
   }
 
   button.about-button-next {
