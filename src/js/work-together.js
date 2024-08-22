@@ -13,19 +13,18 @@ const closeModalBtn = document.querySelector('.modal-close-btn');
 
 const emailRegex = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-// Читання значень з локального сховища при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', function () {
   const savedEmail = localStorage.getItem('email');
   const savedComment = localStorage.getItem('comment');
   
   if (savedEmail) {
     emailInput.value = savedEmail;
-    validateEmail(); // Перевірка валідності після зчитування
+    validateEmail();
   }
   
   if (savedComment) {
     commentInput.value = savedComment;
-    validateComment(); // Перевірка валідності після зчитування
+    validateComment(); 
   }
 });
 
@@ -72,7 +71,6 @@ function validateEmail() {
     emailError.style.display = 'none';
     emailSuccess.style.display = 'block'; 
 
-    // Збереження валідного значення email в локальне сховище
     localStorage.setItem('email', emailValue);
   }
 }
@@ -89,7 +87,6 @@ function validateComment() {
     commentInput.classList.remove('invalid');
     commentWarning.style.display = 'none';
 
-    // Збереження валідного коментаря в локальне сховище
     localStorage.setItem('comment', commentValue);
   } else {
     commentInput.classList.add('invalid');
@@ -100,12 +97,12 @@ function validateComment() {
 
 emailInput.addEventListener('input', function () {
   validateEmail();
-  localStorage.setItem('email', emailInput.value.trim()); // Збереження при введенні
+  localStorage.setItem('email', emailInput.value.trim()); 
 });
 
 commentInput.addEventListener('input', function () {
   validateComment();
-  localStorage.setItem('comment', commentInput.value.trim()); // Збереження при введенні
+  localStorage.setItem('comment', commentInput.value.trim()); 
 });
 
 form.addEventListener('submit', async function(event) {
@@ -156,7 +153,6 @@ form.addEventListener('submit', async function(event) {
       validateEmail(); 
       validateComment();
 
-      // Дані лишаються в локальному сховищі, не видаляємо їх
     } else {
       openErrModal(`Error: ${response.data.message || 'Unknown error occurred.'}`);
     }
