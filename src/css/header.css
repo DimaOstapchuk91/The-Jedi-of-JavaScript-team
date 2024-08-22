@@ -58,7 +58,7 @@
   cursor: pointer;
   font-size: 18px;
   z-index: 1000;
-  transition: opacity 1s ease;
+  transition: opacity 1s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 .scroll-to-top.up-btn-show {
   opacity: 1;
